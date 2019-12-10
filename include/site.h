@@ -64,6 +64,9 @@ SOFTWARE.
 #define VENDOR_RELEASE	6600
 #endif
 
+#ifndef VENDOR_NAME
+#define VENDOR_NAME	"blah blah"
+#endif
 /*
  * The following constants are provided solely as a last line of defense.  The
  * normal build ALWAYS overrides them using a special rule given in
@@ -73,7 +76,9 @@ SOFTWARE.
  * DO NOT CHANGE THESE VALUES OR THE DIX IMAKEFILE!
  */
 #ifndef COMPILEDDEFAULTFONTPATH
-#define COMPILEDDEFAULTFONTPATH	"/usr/share/fonts/X11/misc/"
+/////#define COMPILEDDEFAULTFONTPATH	"/usr/share/fonts/X11/misc/"
+///#define COMPILEDDEFAULTFONTPATH	"d:\\Projects\\xorg\\mit\\fonts\\bdf\\misc\\"
+#define COMPILEDDEFAULTFONTPATH	"c:\\Program Files\\VcXsrv\\fonts\\misc\\"
 #endif
 
 /*

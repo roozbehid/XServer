@@ -262,7 +262,7 @@ miMoveWindow(WindowPtr pWin, int x, int y, WindowPtr pNextSib, VTKind kind)
     Bool anyMarked = FALSE;
     ScreenPtr pScreen;
     WindowPtr windowToValidate;
-    WindowPtr pLayerWin;
+    WindowPtr pLayerWin=NULL;
 
     /* if this is a root window, can't be moved */
     if (!(pParent = pWin->parent))
@@ -388,7 +388,7 @@ miSlideAndSizeWindow(WindowPtr pWin,
     RegionPtr	borderVisible = NullRegion; /* visible area of the border */
     Bool	shrunk = FALSE; /* shrunk in an inner dimension */
     Bool	moved = FALSE;	/* window position changed */
-    WindowPtr  pLayerWin;
+    WindowPtr  pLayerWin=NULL;
 
     /* if this is a root window, can't be resized */
     if (!(pParent = pWin->parent))
@@ -689,7 +689,7 @@ miSetShape(WindowPtr pWin, int kind)
     Bool        WasViewable = (Bool)(pWin->viewable);
     ScreenPtr   pScreen = pWin->drawable.pScreen;
     Bool        anyMarked = FALSE;
-    WindowPtr   pLayerWin;
+    WindowPtr   pLayerWin=NULL;
 
     if (kind != ShapeInput) {
         if (WasViewable)
@@ -750,7 +750,7 @@ miChangeBorderWidth(WindowPtr pWin, unsigned int width)
     ScreenPtr pScreen;
     Bool WasViewable = (Bool)(pWin->viewable);
     Bool HadBorder;
-    WindowPtr  pLayerWin;
+    WindowPtr  pLayerWin=NULL;
 
     oldwidth = wBorderWidth (pWin);
     if (oldwidth == width)

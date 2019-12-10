@@ -355,15 +355,15 @@ DuplicateInputAttributes(InputAttributes *attrs)
     if (!(new_attr = calloc(1, sizeof(InputAttributes))))
         goto unwind;
 
-    if (attrs->product && !(new_attr->product = strdup(attrs->product)))
+    if (attrs->product && !(new_attr->product = _strdup(attrs->product)))
         goto unwind;
-    if (attrs->vendor && !(new_attr->vendor = strdup(attrs->vendor)))
+    if (attrs->vendor && !(new_attr->vendor = _strdup(attrs->vendor)))
         goto unwind;
-    if (attrs->device && !(new_attr->device = strdup(attrs->device)))
+    if (attrs->device && !(new_attr->device = _strdup(attrs->device)))
         goto unwind;
-    if (attrs->pnp_id && !(new_attr->pnp_id = strdup(attrs->pnp_id)))
+    if (attrs->pnp_id && !(new_attr->pnp_id = _strdup(attrs->pnp_id)))
         goto unwind;
-    if (attrs->usb_id && !(new_attr->usb_id = strdup(attrs->usb_id)))
+    if (attrs->usb_id && !(new_attr->usb_id = _strdup(attrs->usb_id)))
         goto unwind;
 
     new_attr->flags = attrs->flags;
@@ -382,7 +382,7 @@ DuplicateInputAttributes(InputAttributes *attrs)
 
         while(*tags)
         {
-            *new_tags = strdup(*tags);
+            *new_tags = _strdup(*tags);
             if (!*new_tags)
                 goto unwind;
 
@@ -580,7 +580,7 @@ void verify_internal_event(const InternalEvent *ev)
                 ErrorF("\n");
         }
 
-        xorg_backtrace();
+        ////xorg_backtrace();
         FatalError("Wrong event type %d. Aborting server\n", ev->any.header);
     }
 }

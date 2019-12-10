@@ -150,7 +150,7 @@ RegisterExtensionNames(ExtensionEntry *extEntry)
 	    goto invalid;
 
 	/* Duplicate the string after the space */
-	lineobj = strdup(ptr + 1);
+	lineobj = _strdup(ptr + 1);
 	if (!lineobj)
 	    continue;
 

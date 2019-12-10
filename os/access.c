@@ -86,7 +86,7 @@ SOFTWARE.
 
 #include <stdio.h>
 #include <stdlib.h>
-#define XSERV_t
+#define XSERV_t 
 #define TRANS_SERVER
 #define TRANS_REOPEN
 #include <X11/Xtrans/Xtrans.h>
@@ -1091,6 +1091,7 @@ LocalClientCred(ClientPtr client, int *pUid, int *pGid)
 int
 GetLocalClientCreds(ClientPtr client, LocalClientCredRec **lccp)
 {
+
 #if defined(HAS_GETPEEREID) || defined(HAS_GETPEERUCRED) || defined(SO_PEERCRED)
     int fd;
     XtransConnInfo ci;
@@ -1513,7 +1514,7 @@ ConvertAddr (
     switch (saddr->sa_family)
     {
     case AF_UNSPEC:
-#if defined(UNIXCONN) || defined(LOCALCONN)
+#if defined(UNIXCONN) || defined(LOCALCONN) || defined(LOCALCONNPIPE)
     case AF_UNIX:
 #endif
         return FamilyLocal;

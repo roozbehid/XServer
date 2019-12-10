@@ -27,7 +27,8 @@
 #ifdef HAVE_CONFIG_H
 #include "kdrive-config.h"
 #endif
-#include "kdrive.h"
+#include "../src//kdrive.h"
+#include <stdio.h>
 #include <SDL/SDL.h>
 #include <SDL/SDL_syswm.h>
 #include <X11/keysym.h>
@@ -46,6 +47,11 @@
 // DEBUG
 //#define printf(...)
 #define printf(...) __android_log_print(ANDROID_LOG_INFO, "XSDL", __VA_ARGS__)
+#endif
+
+#ifdef __EMSCRIPTEN__
+#include <emscripten.h>
+#include <emscripten/threading.h>
 #endif
 
 static void xsdlFini(void);
@@ -70,6 +76,7 @@ static void send_unicode(int unicode);
 static void set_clipboard_text(const char *text);
 static Bool sdlScreenButtons = FALSE;
 static void setScreenButtons(int mouseX);
+static Bool enableRender(ScreenPtr pScreen);
 static enum sdlKeyboardType_t { KB_NATIVE = 0, KB_BUILTIN = 1, KB_BOTH = 2 };
 enum sdlKeyboardType_t sdlKeyboardType = KB_NATIVE;
 
@@ -99,6 +106,7 @@ KdCardFuncs sdlFuncs = {
 	.scrinit = sdlScreenInit,	/* scrinit */
 	.finishInitScreen = sdlFinishInitScreen, /* finishInitScreen */
 	.createRes = sdlCreateRes,	/* createRes */
+	
 };
 
 int mouseState = 0;
@@ -115,6 +123,10 @@ typedef struct
 
 //#undef RANDR
 
+static Bool enableRender(ScreenPtr pScreen) {
+	;
+}
+
 static Bool sdlMapFramebuffer (KdScreenInfo *screen)
 {
 	SdlDriver			*driver = screen->driver;
@@ -125,6 +137,7 @@ static Bool sdlMapFramebuffer (KdScreenInfo *screen)
 	else
 		driver->shadow = FALSE;
 
+	driver->shadow = TRUE;
 	KdComputePointerMatrix (&m, driver->randr, screen->width, screen->height);
 
 	KdSetPointerMatrix (&m);
@@ -183,21 +196,24 @@ sdlUnmapFramebuffer (KdScreenInfo *screen)
 static Bool sdlScreenInit(KdScreenInfo *screen)
 {
 	SdlDriver *driver=calloc(1, sizeof(SdlDriver));
-	printf("%s\n", __func__);
+	//printf("%s\n", __func__);
 	if (!screen->width || !screen->height)
 	{
 		screen->width = 640;
 		screen->height = 480;
 	}
 	if (!screen->fb.depth)
-		screen->fb.depth = 4;
+		screen->fb.depth = 32;
 	printf("Attempting for %dx%d/%dbpp mode\n", screen->width, screen->height, screen->fb.depth);
-	driver->screen = SDL_SetVideoMode(screen->width, screen->height, screen->fb.depth, 0);
-	if(driver->screen == NULL)
+	driver->screen = SDL_SetVideoMode(screen->width, screen->height, screen->fb.depth, SDL_HWSURFACE);
+	if (driver->screen == NULL)
+	{
+		printf("SDL_SetVideoMode failed");
 		return FALSE;
+	}
 	driver->randr = screen->randr;
 	screen->driver = driver;
-	printf("Set %dx%d/%dbpp mode\n", driver->screen->w, driver->screen->h, driver->screen->format->BitsPerPixel);
+	printf("Set %dx%d/%dbpp mode. rotation:%d\n", driver->screen->w, driver->screen->h, driver->screen->format->BitsPerPixel, driver->randr);
 	screen->width = driver->screen->w;
 	screen->height = driver->screen->h;
 	screen->fb.depth = driver->screen->format->BitsPerPixel;
@@ -206,21 +222,23 @@ static Bool sdlScreenInit(KdScreenInfo *screen)
 	screen->fb.greenMask = driver->screen->format->Gmask;
 	screen->fb.blueMask = driver->screen->format->Bmask;
 	screen->fb.bitsPerPixel = driver->screen->format->BitsPerPixel;
-	//screen->fb.shadow = FALSE;
+	screen->fb.shadow = TRUE;
 	screen->rate=30; // 60 is too intense for CPU
 
 	SDL_WM_SetCaption("Freedesktop.org X server (SDL)", NULL);
 
 	SDL_EnableUNICODE(1);
+#ifndef __EMSCRIPTEN__ 
 	SDL_EventState(SDL_SYSWMEVENT, SDL_ENABLE);
-	set_clipboard_text(SDL_GetClipboardText());
+#endif
+	////set_clipboard_text(SDL_GetClipboardText());
 
-	sdlScreenButtons = SDL_ANDROID_GetScreenKeyboardButtonShown(SDL_ANDROID_SCREENKEYBOARD_BUTTON_0);
+	////sdlScreenButtons = SDL_ANDROID_GetScreenKeyboardButtonShown(SDL_ANDROID_SCREENKEYBOARD_BUTTON_0);
 	setScreenButtons(10000);
 
 	if (getenv("XSDL_BUILTIN_KEYBOARD") != NULL)
 		sdlKeyboardType = (enum sdlKeyboardType_t) atoi(getenv("XSDL_BUILTIN_KEYBOARD"));
-	unsetenv("XSDL_BUILTIN_KEYBOARD");
+	////unsetenv("XSDL_BUILTIN_KEYBOARD");
 
 	printf("sdlScreenButtons %d sdlKeyboardType %d\n", sdlScreenButtons, sdlKeyboardType);
 
@@ -229,6 +247,7 @@ static Bool sdlScreenInit(KdScreenInfo *screen)
 
 static void sdlShadowUpdate (ScreenPtr pScreen, shadowBufPtr pBuf)
 {
+
 	KdScreenPriv(pScreen);
 	KdScreenInfo *screen = pScreenPriv->screen;
 	SdlDriver *driver = screen->driver;
@@ -236,7 +255,9 @@ static void sdlShadowUpdate (ScreenPtr pScreen, shadowBufPtr pBuf)
 	int amount, i;
 	int updateRectsPixelCount = 0;
 
-	//printf("sdlShadowUpdate: time %d", SDL_GetTicks());
+	//printf("sdlShadowUpdate: time %d\n", SDL_GetTicks());
+
+	SDL_LockSurface(driver->screen);
 
 	if (driver->shadow)
 	{
@@ -266,7 +287,8 @@ static void sdlShadowUpdate (ScreenPtr pScreen, shadowBufPtr pBuf)
 		}
 		else
 			update = shadowUpdatePacked;
-
+		
+		update = shadowUpdatePacked;
 		update(pScreen, pBuf);
 	}
 
@@ -280,9 +302,14 @@ static void sdlShadowUpdate (ScreenPtr pScreen, shadowBufPtr pBuf)
 	// so if total area of pixels copied is more than 1/3 of the whole screen area,
 	// there will be performance hit instead of optimization.
 
-	if ( amount > NUMRECTS || updateRectsPixelCount * 3 > driver->screen->w * driver->screen->h )
+	
+	SDL_UnlockSurface(driver->screen);
+	SDL_Flip(driver->screen);
+
+	/*if ( amount > NUMRECTS || updateRectsPixelCount * 3 > driver->screen->w * driver->screen->h )
 	{
 		//printf("SDL_Flip\n");
+		/////emscripten_sync_run_in_main_runtime_thread(EM_FUNC_SIG_II, SDL_Flip, driver->screen);
 		SDL_Flip(driver->screen);
 		//nextFullScreenRefresh = 0;
 	}
@@ -297,11 +324,13 @@ static void sdlShadowUpdate (ScreenPtr pScreen, shadowBufPtr pBuf)
 			updateRects[i].y = rects[i].y1;
 			updateRects[i].w = rects[i].x2 - rects[i].x1;
 			updateRects[i].h = rects[i].y2 - rects[i].y1;
-			//printf("sdlShadowUpdate: rect %d: %04d:%04d:%04d:%04d", i, rects[i].x1, rects[i].y1, rects[i].x2, rects[i].y2);
+			//printf("sdlShadowUpdate: rect %d: %04d:%04d:%04d:%04d\n", i, rects[i].x1, rects[i].y1, rects[i].x2, rects[i].y2);
 		}
 		//printf("SDL_UpdateRects %d\n", amount);
+
+		////emscripten_sync_run_in_main_runtime_thread(EM_FUNC_SIG_VIII, SDL_UpdateRects, driver->screen, amount, updateRects);
 		SDL_UpdateRects(driver->screen, amount, updateRects);
-	}
+	}*/
 }
 
 static void *sdlShadowWindow (ScreenPtr pScreen, CARD32 row, CARD32 offset, int mode, CARD32 *size, void *closure)
@@ -526,7 +555,7 @@ static Status sdlKeyboardInit(KdKeyboardInfo *ki)
 {
 	ki->minScanCode = 8;
 	ki->maxScanCode = 255;
-	ki->name = strdup("Android keyboard");
+	ki->name = _strdup("Android keyboard");
 
 	sdlKeyboard = ki;
 	printf("sdlKeyboardInit() %p\n", ki);
@@ -553,7 +582,7 @@ static void sdlKeyboardBell (KdKeyboardInfo *ki, int volume, int frequency, int 
 static Status sdlMouseInit (KdPointerInfo *pi)
 {
 	pi->nButtons = 7;
-	pi->name = strdup("Android touchscreen and stylus");
+	pi->name = _strdup("Android touchscreen and stylus");
 	sdlPointer = pi;
 	printf("sdlMouseInit() %p\n", pi);
 	return Success;
@@ -776,8 +805,8 @@ static void sdlPollInput(void)
 				SDL_Flip(SDL_GetVideoSurface());
 				break;
 			case SDL_SYSWMEVENT:
-				if (event.syswm.msg != NULL && event.syswm.msg->type == SDL_SYSWM_ANDROID_CLIPBOARD_CHANGED)
-					set_clipboard_text(SDL_GetClipboardText());
+				////if (event.syswm.msg != NULL && event.syswm.msg->type == SDL_SYSWM_ANDROID_CLIPBOARD_CHANGED)
+					////set_clipboard_text(SDL_GetClipboardText());
 				break;
 			//case SDL_QUIT:
 				/* this should never happen */
@@ -850,7 +879,8 @@ static void executeBackground(const char *cmd)
 		dup2(2, fd);
 		*/
 		execlp("logwrapper", "logwrapper", "sh", "-c", cmd, NULL);
-		printf("Error: cannot launch command: %s\n", strerror(errno));
+		///printf("Error: cannot launch command: %s\n", strerror(errno));
+		printf("Error: cannot launch command\n");
 		exit(0);
 	}
 }
@@ -880,84 +910,18 @@ static void launchPulseAudio()
 
 static void *xsdlAudioThread(void *data)
 {
-	char infile[PATH_MAX];
-	int fd, notify;
-	struct inotify_event notifyEvents[8];
-
-	strcpy(infile, getenv("SECURE_STORAGE_DIR"));
-	strcat(infile, "/pulse/pulseaudio");
-
-	if (access(infile, X_OK) < 0)
-	{
-		printf("PulseAudio not installed, disabling audio");
-		return NULL;
-	}
-
-	strcpy(infile, getenv("SECURE_STORAGE_DIR"));
-	strcat(infile, "/pulse");
-
-	printf("Registering inotify listener on %s", infile);
-	notify = inotify_init();
-	if (inotify_add_watch(notify, infile, IN_CREATE | IN_DELETE) < 0)
-	{
-		printf("Cannot set inotify event on dir %s, disabling audio: %s\n", infile, strerror(errno));
-		close(notify);
-		return NULL;
-	}
-
-	initPulseAudioConfig();
-	launchPulseAudio();
-
-	strcpy(infile, getenv("SECURE_STORAGE_DIR"));
-	strcat(infile, "/pulse/audio-out");
-
-	while (1)
-	{
-		printf("Trying to open audio pipe %s\n", infile);
-		if ((fd = open(infile, O_RDONLY)) > -1)
-		{
-			printf("Reading audio data from pipe %s", infile);
-			xsdlConnectionClosed = 0;
-			SDL_AudioSpec spec, obtained;
-			memset(&spec, 0, sizeof(spec));
-			spec.freq = 44100;
-			spec.format = AUDIO_S16;
-			spec.channels = 2;
-			spec.samples = 4096;
-			spec.callback = xsdlAudioCallback;
-			spec.userdata = (void *)fd;
-			SDL_OpenAudio(&spec, &obtained);
-			SDL_PauseAudio(0);
-			while (!xsdlConnectionClosed)
-			{
-				printf("Waiting for audio pipe to close");
-				read(notify, notifyEvents, sizeof(notifyEvents));
-			}
-			SDL_CloseAudio();
-			close(fd);
-			printf("Audio pipe closed: %s", infile);
-		}
-		else
-		{
-			printf("Waiting for audio pipe to open");
-			read(notify, notifyEvents, sizeof(notifyEvents));
-		}
-	}
-	close(notify);
 	return NULL;
 }
 
 static void xsdlCreateAudioThread()
 {
-	pthread_t threadId;
-	pthread_create(&threadId, NULL, &xsdlAudioThread, NULL);
-	pthread_detach(threadId);
+	
 }
 
 static int xsdlInit(void)
 {
 	printf("Calling SDL_Init()\n");
-	SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK | SDL_INIT_AUDIO);
+	SDL_Init(SDL_INIT_VIDEO);
 	SDL_JoystickOpen(0); // Receive pressure events
 	xsdlCreateAudioThread();
 	return 0;
@@ -1005,35 +969,17 @@ static void *send_unicode_thread(void *param)
 
 static void *set_clipboard_text_thread(void *param)
 {
-	// International text input - copy symbol to clipboard, and send copypaste key
-	const char *text = (const char *)param;
-	char cmd[1024] = "";
-	sprintf (cmd, "127.0.0.1:%s", display);
-	setenv ("DISPLAY", cmd, 1);
-	sprintf(cmd, "%s/usr/bin/xsel -b -i >/dev/null 2>&1", getenv("APPDIR"));
-	execute_command(cmd, "w", text, strlen(text));
-	SDL_free(text);
-	return NULL;
+	
 }
 
 void send_unicode(int unicode)
 {
-	pthread_t thread_id;
-	pthread_attr_t attr;
-	pthread_attr_init (&attr);
-	pthread_attr_setdetachstate (&attr, PTHREAD_CREATE_DETACHED);
-	pthread_create (&thread_id, &attr, &send_unicode_thread, (void *)unicode);
-	pthread_attr_destroy (&attr);
+	
 }
 
 void set_clipboard_text(const char *text)
 {
-	pthread_t thread_id;
-	pthread_attr_t attr;
-	pthread_attr_init (&attr);
-	pthread_attr_setdetachstate (&attr, PTHREAD_CREATE_DETACHED);
-	pthread_create (&thread_id, &attr, &set_clipboard_text_thread, (void *)text);
-	pthread_attr_destroy (&attr);
+	
 }
 
 int execute_command(const char * command, const char *mode, char * data, int datalen)

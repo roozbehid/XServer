@@ -95,7 +95,7 @@ OR PERFORMANCE OF THIS SOFTWARE.
 
 #ifdef WIN32
 #include <process.h>
-#define getpid(x) _getpid(x)
+////#define getpid(x) _getpid(x)
 #endif
 
 #ifdef __ANDROID__
@@ -191,9 +191,10 @@ LogInit(const char *fname, const char *backup)
 	if (backup && *backup) {
 	    struct stat buf;
 
-	    if (!stat(logFileName, &buf) && S_ISREG(buf.st_mode)) {
+		//////////
+	    if (!stat(logFileName, &buf) /*&& S_ISREG(buf.st_mode)*/) {
 		char *suffix;
-		char *oldLog;
+		char *oldLog=NULL;
 
 		if ((asprintf(&suffix, backup, display) == -1) ||
 		    (asprintf(&oldLog, "%s%s", logFileName, suffix) == -1))
@@ -276,7 +277,12 @@ LogVWrite(int verb, const char *f, va_list args)
     static Bool newline = TRUE;
 
     if (newline) {
-	sprintf(tmpBuffer, "[%10.3f] ", GetTimeInMillis() / 1000.0);
+#ifdef _WIN32
+		float ticks = GetTimeInMillis() / 1000.0;
+		sprintf_s(tmpBuffer, 1024, "[%10.3f] ", ticks);
+#else
+		sprintf(tmpBuffer, "[%10.3f] ", GetTimeInMillis() / 1000.0);
+#endif
 	len = strlen(tmpBuffer);
 	if (logFile)
 	    fwrite(tmpBuffer, len, 1, logFile);
@@ -463,7 +469,7 @@ AuditPrefix(void)
     tmpBuf = malloc(len);
     if (!tmpBuf)
 	return NULL;
-    snprintf(tmpBuf, len, AUDIT_PREFIX, autime, (unsigned long)getpid());
+    snprintf(tmpBuf, len, AUDIT_PREFIX, autime, (unsigned long)_getpid());
     return tmpBuf;
 }
 

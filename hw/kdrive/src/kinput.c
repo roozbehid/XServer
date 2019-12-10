@@ -37,7 +37,7 @@
 #ifdef sun
 #include <sys/file.h> /* needed for FNONBLOCK & FASYNC */
 #endif
-
+#include <string.h>
 #include "xkbsrv.h"
 
 #include <X11/extensions/XI.h>
@@ -51,6 +51,9 @@
 #include "inpututils.h"
 
 #define AtomFromName(x) MakeAtom(x, strlen(x), 1)
+#ifdef WIN32
+	#define strcasecmp _stricmp 
+#endif
 
 struct KdConfigDevice {
     char *line;
@@ -103,21 +106,21 @@ KdSigio (int sig)
 static void
 KdBlockSigio (void)
 {
-    sigset_t	set;
+    /*sigset_t	set;
 
     sigemptyset (&set);
     sigaddset (&set, SIGIO);
-    sigprocmask (SIG_BLOCK, &set, 0);
+    sigprocmask (SIG_BLOCK, &set, 0);*/
 }
 
 static void
 KdUnblockSigio (void)
 {
-    sigset_t	set;
+    /*sigset_t	set;
 
     sigemptyset (&set);
     sigaddset (&set, SIGIO);
-    sigprocmask (SIG_UNBLOCK, &set, 0);
+    sigprocmask (SIG_UNBLOCK, &set, 0);*/
 }
 
 #ifdef DEBUG_SIGIO
@@ -163,16 +166,16 @@ KdResetInputMachine (void)
 static void
 KdNonBlockFd (int fd)
 {
-    int	flags;
+    /*int	flags;
     flags = fcntl (fd, F_GETFL);
     flags |= FASYNC|NOBLOCK;
-    fcntl (fd, F_SETFL, flags);
+    fcntl (fd, F_SETFL, flags);*/
 }
 
 static void
 KdAddFd (int fd)
 {
-    struct sigaction	act;
+    /*struct sigaction	act;
     sigset_t		set;
 
     kdnFds++;
@@ -187,13 +190,13 @@ KdAddFd (int fd)
     sigaddset (&act.sa_mask, SIGVTALRM);
     sigaction (SIGIO, &act, 0);
     sigemptyset (&set);
-    sigprocmask (SIG_SETMASK, &set, 0);
+    sigprocmask (SIG_SETMASK, &set, 0);*/
 }
 
 static void
 KdRemoveFd (int fd)
 {
-    struct sigaction	act;
+    /*struct sigaction	act;
     int			flags;
 
     kdnFds--;
@@ -207,7 +210,7 @@ KdRemoveFd (int fd)
 	act.sa_handler = SIG_IGN;
 	sigemptyset (&act.sa_mask);
 	sigaction (SIGIO, &act, 0);
-    }
+    }*/
 }
 
 Bool
@@ -903,11 +906,11 @@ KdNewKeyboard (void)
     ki->bellDuration = 200;
     ki->next = NULL;
     ki->options = NULL;
-    ki->xkbRules = strdup(XKB_DFLT_RULES);
-    ki->xkbModel = strdup(XKB_DFLT_MODEL);
-    ki->xkbLayout = strdup(XKB_DFLT_LAYOUT);
-    ki->xkbVariant = strdup(XKB_DFLT_VARIANT);
-    ki->xkbOptions = strdup(XKB_DFLT_OPTIONS);
+    ki->xkbRules = _strdup(XKB_DFLT_RULES);
+    ki->xkbModel = _strdup(XKB_DFLT_MODEL);
+    ki->xkbLayout = _strdup(XKB_DFLT_LAYOUT);
+    ki->xkbVariant = _strdup(XKB_DFLT_VARIANT);
+    ki->xkbOptions = _strdup(XKB_DFLT_OPTIONS);
 
     return ki;
 }
@@ -924,7 +927,7 @@ KdAddConfigKeyboard (char *keyboard)
     if (!new)
         return BadAlloc;
 
-    new->line = strdup(keyboard);
+    new->line = _strdup(keyboard);
     new->next = NULL;
 
     for (prev = &kdConfigKeyboards; *prev; prev = &(*prev)->next);
@@ -988,7 +991,7 @@ KdAddConfigPointer (char *pointer)
     if (!new)
         return BadAlloc;
 
-    new->line = strdup(pointer);
+    new->line = _strdup(pointer);
     new->next = NULL;
 
     for (prev = &kdConfigPointers; *prev; prev = &(*prev)->next);
@@ -1064,11 +1067,11 @@ KdGetOptions (InputOption **options, char *string)
         newopt->key = (char *)malloc(tam_key);
         strncpy(newopt->key, string, tam_key);
         newopt->key[tam_key] = '\0';
-        newopt->value = strdup(strchr(string, '=') + 1);
+        newopt->value = _strdup(strchr(string, '=') + 1);
     }
     else
     {
-        newopt->key = strdup(string);
+        newopt->key = _strdup(string);
         newopt->value = NULL;
     }
     newopt->next = NULL;
@@ -1094,7 +1097,7 @@ KdParseKbdOptions (KdKeyboardInfo *ki)
         else if (strcasecmp(option->key, "XkbOptions") == 0)
             ki->xkbOptions = option->value;
         else if (!strcasecmp (option->key, "device"))
-            ki->path = strdup(option->value);
+            ki->path = _strdup(option->value);
         else
            ErrorF("Kbd option key (%s) of value (%s) not assigned!\n",
                     option->key, option->value);
@@ -1113,7 +1116,7 @@ KdParseKeyboard (char *arg)
     if (!ki)
         return NULL;
 
-    ki->name = strdup("Unknown KDrive Keyboard");
+    ki->name = _strdup("Unknown KDrive Keyboard");
     ki->path = NULL;
     ki->driver = NULL;
     ki->driverPrivate = NULL;
@@ -1144,7 +1147,7 @@ KdParseKeyboard (char *arg)
     if (strcmp (save, "auto") == 0)
         ki->driverPrivate = NULL;
     else
-        ki->driverPrivate = strdup(save);
+        ki->driverPrivate = _strdup(save);
 
     if (delim != ',')
     {
@@ -1189,9 +1192,9 @@ KdParsePointerOptions (KdPointerInfo *pi)
         else if (!strcmp (option->key, "rawcoord"))
             pi->transformCoordinates = FALSE;
         else if (!strcasecmp (option->key, "device"))
-            pi->path = strdup(option->value);
+            pi->path = _strdup(option->value);
         else if (!strcasecmp (option->key, "protocol"))
-            pi->protocol = strdup(option->value);
+            pi->protocol = _strdup(option->value);
         else
             ErrorF("Pointer option key (%s) of value (%s) not assigned!\n",
                     option->key, option->value);
@@ -1240,7 +1243,7 @@ KdParsePointer (char *arg)
     if (strcmp(save, "auto") == 0)
         pi->driverPrivate = NULL;
     else
-        pi->driverPrivate = strdup(save);
+        pi->driverPrivate = _strdup(save);
 
     if (delim != ',')
     {
@@ -2263,9 +2266,9 @@ NewInputDeviceRequest(InputOption *options, InputAttributes *attrs,
     for (option = options; option; option = option->next) {
         if (strcmp(option->key, "device") == 0) {
             if (pi && option->value)
-                pi->path = strdup(option->value);
+                pi->path = _strdup(option->value);
             else if (ki && option->value)
-                ki->path = strdup(option->value);
+                ki->path = _strdup(option->value);
         }
         else if (strcmp(option->key, "driver") == 0) {
             if (pi) {

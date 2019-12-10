@@ -31,6 +31,7 @@
 #endif /* HAVE_DIX_CONFIG_H */
 #include <X11/Xfuncproto.h>
 #include <sys/types.h>
+#include <os.h>
 
 /* Client IDs. Use GetClientPid, GetClientCmdName and GetClientCmdArgs
  * instead of accessing the fields directly. */

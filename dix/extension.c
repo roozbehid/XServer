@@ -96,7 +96,7 @@ AddExtension(char *name, int NumEvents, int NumErrors,
 	free(ext);
 	return NULL;
     }
-    ext->name = strdup(name);
+    ext->name = _strdup(name);
     ext->num_aliases = 0;
     ext->aliases = (char **)NULL;
     if (!ext->name)
@@ -163,7 +163,7 @@ Bool AddExtensionAlias(char *alias, ExtensionEntry *ext)
     if (!aliases)
 	return FALSE;
     ext->aliases = aliases;
-    name = strdup(alias);
+    name = _strdup(alias);
     if (!name)
 	return FALSE;
     ext->aliases[ext->num_aliases] = name;

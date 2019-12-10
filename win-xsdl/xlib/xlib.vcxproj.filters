@@ -1,0 +1,907 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\AllCells.c" />
+    <ClCompile Include="src\AllowEv.c" />
+    <ClCompile Include="src\AllPlanes.c" />
+    <ClCompile Include="src\AutoRep.c" />
+    <ClCompile Include="src\Backgnd.c" />
+    <ClCompile Include="src\BdrWidth.c" />
+    <ClCompile Include="src\Bell.c" />
+    <ClCompile Include="src\Border.c" />
+    <ClCompile Include="src\ChAccCon.c" />
+    <ClCompile Include="src\ChActPGb.c" />
+    <ClCompile Include="src\ChClMode.c" />
+    <ClCompile Include="src\ChCmap.c" />
+    <ClCompile Include="src\ChGC.c" />
+    <ClCompile Include="src\ChKeyCon.c" />
+    <ClCompile Include="src\ChkIfEv.c" />
+    <ClCompile Include="src\ChkMaskEv.c" />
+    <ClCompile Include="src\ChkTypEv.c" />
+    <ClCompile Include="src\ChkTypWEv.c" />
+    <ClCompile Include="src\ChkWinEv.c" />
+    <ClCompile Include="src\ChPntCon.c" />
+    <ClCompile Include="src\ChProp.c" />
+    <ClCompile Include="src\ChSaveSet.c" />
+    <ClCompile Include="src\ChWAttrs.c" />
+    <ClCompile Include="src\ChWindow.c" />
+    <ClCompile Include="src\CirWin.c" />
+    <ClCompile Include="src\CirWinDn.c" />
+    <ClCompile Include="src\CirWinUp.c" />
+    <ClCompile Include="src\ClDisplay.c" />
+    <ClCompile Include="src\Clear.c" />
+    <ClCompile Include="src\ClearArea.c" />
+    <ClCompile Include="src\ConfWind.c" />
+    <ClCompile Include="src\Context.c" />
+    <ClCompile Include="src\ConvSel.c" />
+    <ClCompile Include="src\CopyArea.c" />
+    <ClCompile Include="src\CopyCmap.c" />
+    <ClCompile Include="src\CopyGC.c" />
+    <ClCompile Include="src\CopyPlane.c" />
+    <ClCompile Include="src\CrBFData.c" />
+    <ClCompile Include="src\CrCmap.c" />
+    <ClCompile Include="src\CrCursor.c" />
+    <ClCompile Include="src\CrGC.c" />
+    <ClCompile Include="src\CrGlCur.c" />
+    <ClCompile Include="src\CrPFBData.c" />
+    <ClCompile Include="src\CrPixmap.c" />
+    <ClCompile Include="src\CrWindow.c" />
+    <ClCompile Include="src\Cursor.c" />
+    <ClCompile Include="src\DefCursor.c" />
+    <ClCompile Include="src\DelProp.c" />
+    <ClCompile Include="src\Depths.c" />
+    <ClCompile Include="src\DestSubs.c" />
+    <ClCompile Include="src\DestWind.c" />
+    <ClCompile Include="src\DisName.c" />
+    <ClCompile Include="src\DrArc.c" />
+    <ClCompile Include="src\DrArcs.c" />
+    <ClCompile Include="src\DrLine.c" />
+    <ClCompile Include="src\DrLines.c" />
+    <ClCompile Include="src\DrPoint.c" />
+    <ClCompile Include="src\DrPoints.c" />
+    <ClCompile Include="src\DrRect.c" />
+    <ClCompile Include="src\DrRects.c" />
+    <ClCompile Include="src\DrSegs.c" />
+    <ClCompile Include="src\ErrDes.c" />
+    <ClCompile Include="src\ErrHndlr.c" />
+    <ClCompile Include="src\evtomask.c" />
+    <ClCompile Include="src\EvToWire.c" />
+    <ClCompile Include="src\FetchName.c" />
+    <ClCompile Include="src\FillArc.c" />
+    <ClCompile Include="src\FillArcs.c" />
+    <ClCompile Include="src\FillPoly.c" />
+    <ClCompile Include="src\FillRct.c" />
+    <ClCompile Include="src\FillRcts.c" />
+    <ClCompile Include="src\FilterEv.c" />
+    <ClCompile Include="src\Flush.c" />
+    <ClCompile Include="src\Font.c" />
+    <ClCompile Include="src\FontInfo.c" />
+    <ClCompile Include="src\FontNames.c" />
+    <ClCompile Include="src\FreeCmap.c" />
+    <ClCompile Include="src\FreeCols.c" />
+    <ClCompile Include="src\FreeCurs.c" />
+    <ClCompile Include="src\FreeEData.c" />
+    <ClCompile Include="src\FreeEventData.c" />
+    <ClCompile Include="src\FreeGC.c" />
+    <ClCompile Include="src\FreePix.c" />
+    <ClCompile Include="src\FSSaver.c" />
+    <ClCompile Include="src\FSWrap.c" />
+    <ClCompile Include="src\GCMisc.c" />
+    <ClCompile Include="src\Geom.c" />
+    <ClCompile Include="src\GetAtomNm.c" />
+    <ClCompile Include="src\GetColor.c" />
+    <ClCompile Include="src\GetDflt.c" />
+    <ClCompile Include="src\GetEventData.c" />
+    <ClCompile Include="src\GetFPath.c" />
+    <ClCompile Include="src\GetFProp.c" />
+    <ClCompile Include="src\GetGCVals.c" />
+    <ClCompile Include="src\GetGeom.c" />
+    <ClCompile Include="src\GetHColor.c" />
+    <ClCompile Include="src\GetHints.c" />
+    <ClCompile Include="src\GetIFocus.c" />
+    <ClCompile Include="src\GetImage.c" />
+    <ClCompile Include="src\GetKCnt.c" />
+    <ClCompile Include="src\GetMoEv.c" />
+    <ClCompile Include="src\GetNrmHint.c" />
+    <ClCompile Include="src\GetPCnt.c" />
+    <ClCompile Include="src\GetPntMap.c" />
+    <ClCompile Include="src\GetProp.c" />
+    <ClCompile Include="src\GetRGBCMap.c" />
+    <ClCompile Include="src\GetSOwner.c" />
+    <ClCompile Include="src\GetSSaver.c" />
+    <ClCompile Include="src\GetStCmap.c" />
+    <ClCompile Include="src\GetTxtProp.c" />
+    <ClCompile Include="src\GetWAttrs.c" />
+    <ClCompile Include="src\GetWMCMapW.c" />
+    <ClCompile Include="src\GetWMProto.c" />
+    <ClCompile Include="src\globals.c" />
+    <ClCompile Include="src\GrButton.c" />
+    <ClCompile Include="src\GrKey.c" />
+    <ClCompile Include="src\GrKeybd.c" />
+    <ClCompile Include="src\GrPointer.c" />
+    <ClCompile Include="src\GrServer.c" />
+    <ClCompile Include="src\Host.c" />
+    <ClCompile Include="src\Iconify.c" />
+    <ClCompile Include="src\IfEvent.c" />
+    <ClCompile Include="src\imConv.c" />
+    <ClCompile Include="src\ImText.c" />
+    <ClCompile Include="src\ImText16.c" />
+    <ClCompile Include="src\ImUtil.c" />
+    <ClCompile Include="src\InitExt.c" />
+    <ClCompile Include="src\InsCmap.c" />
+    <ClCompile Include="src\IntAtom.c" />
+    <ClCompile Include="src\KeyBind.c" />
+    <ClCompile Include="src\KeysymStr.c" />
+    <ClCompile Include="src\KillCl.c" />
+    <ClCompile Include="src\LiHosts.c" />
+    <ClCompile Include="src\LiICmaps.c" />
+    <ClCompile Include="src\LiProps.c" />
+    <ClCompile Include="src\ListExt.c" />
+    <ClCompile Include="src\LoadFont.c" />
+    <ClCompile Include="src\LockDis.c" />
+    <ClCompile Include="src\locking.c" />
+    <ClCompile Include="src\LookupCol.c" />
+    <ClCompile Include="src\LowerWin.c" />
+    <ClCompile Include="src\Macros.c" />
+    <ClCompile Include="src\MapRaised.c" />
+    <ClCompile Include="src\MapSubs.c" />
+    <ClCompile Include="src\MapWindow.c" />
+    <ClCompile Include="src\MaskEvent.c" />
+    <ClCompile Include="src\Misc.c" />
+    <ClCompile Include="src\ModMap.c" />
+    <ClCompile Include="src\MoveWin.c" />
+    <ClCompile Include="src\NextEvent.c" />
+    <ClCompile Include="src\OCWrap.c" />
+    <ClCompile Include="src\OMWrap.c" />
+    <ClCompile Include="src\OpenDis.c" />
+    <ClCompile Include="src\ParseCmd.c" />
+    <ClCompile Include="src\ParseCol.c" />
+    <ClCompile Include="src\ParseGeom.c" />
+    <ClCompile Include="src\PeekEvent.c" />
+    <ClCompile Include="src\PeekIfEv.c" />
+    <ClCompile Include="src\Pending.c" />
+    <ClCompile Include="src\PixFormats.c" />
+    <ClCompile Include="src\PmapBgnd.c" />
+    <ClCompile Include="src\PmapBord.c" />
+    <ClCompile Include="src\PolyReg.c" />
+    <ClCompile Include="src\PolyTxt.c" />
+    <ClCompile Include="src\PolyTxt16.c" />
+    <ClCompile Include="src\PropAlloc.c" />
+    <ClCompile Include="src\PutBEvent.c" />
+    <ClCompile Include="src\PutImage.c" />
+    <ClCompile Include="src\Quarks.c" />
+    <ClCompile Include="src\QuBest.c" />
+    <ClCompile Include="src\QuColor.c" />
+    <ClCompile Include="src\QuColors.c" />
+    <ClCompile Include="src\QuCurShp.c" />
+    <ClCompile Include="src\QuExt.c" />
+    <ClCompile Include="src\QuKeybd.c" />
+    <ClCompile Include="src\QuPntr.c" />
+    <ClCompile Include="src\QuStipShp.c" />
+    <ClCompile Include="src\QuTextE16.c" />
+    <ClCompile Include="src\QuTextExt.c" />
+    <ClCompile Include="src\QuTileShp.c" />
+    <ClCompile Include="src\QuTree.c" />
+    <ClCompile Include="src\RaiseWin.c" />
+    <ClCompile Include="src\RdBitF.c" />
+    <ClCompile Include="src\RecolorC.c" />
+    <ClCompile Include="src\ReconfWin.c" />
+    <ClCompile Include="src\ReconfWM.c" />
+    <ClCompile Include="src\Region.c" />
+    <ClCompile Include="src\RegstFlt.c" />
+    <ClCompile Include="src\RepWindow.c" />
+    <ClCompile Include="src\RestackWs.c" />
+    <ClCompile Include="src\RotProp.c" />
+    <ClCompile Include="src\ScrResStr.c" />
+    <ClCompile Include="src\SelInput.c" />
+    <ClCompile Include="src\SendEvent.c" />
+    <ClCompile Include="src\SetBack.c" />
+    <ClCompile Include="src\SetClMask.c" />
+    <ClCompile Include="src\SetClOrig.c" />
+    <ClCompile Include="src\SetCRects.c" />
+    <ClCompile Include="src\SetDashes.c" />
+    <ClCompile Include="src\SetFont.c" />
+    <ClCompile Include="src\SetFore.c" />
+    <ClCompile Include="src\SetFPath.c" />
+    <ClCompile Include="src\SetFunc.c" />
+    <ClCompile Include="src\SetHints.c" />
+    <ClCompile Include="src\SetIFocus.c" />
+    <ClCompile Include="src\SetLocale.c" />
+    <ClCompile Include="src\SetLStyle.c" />
+    <ClCompile Include="src\SetNrmHint.c" />
+    <ClCompile Include="src\SetPMask.c" />
+    <ClCompile Include="src\SetPntMap.c" />
+    <ClCompile Include="src\SetRGBCMap.c" />
+    <ClCompile Include="src\SetSOwner.c" />
+    <ClCompile Include="src\SetSSaver.c" />
+    <ClCompile Include="src\SetState.c" />
+    <ClCompile Include="src\SetStCmap.c" />
+    <ClCompile Include="src\SetStip.c" />
+    <ClCompile Include="src\SetTile.c" />
+    <ClCompile Include="src\SetTSOrig.c" />
+    <ClCompile Include="src\SetTxtProp.c" />
+    <ClCompile Include="src\SetWMCMapW.c" />
+    <ClCompile Include="src\SetWMProto.c" />
+    <ClCompile Include="src\StBytes.c" />
+    <ClCompile Include="src\StColor.c" />
+    <ClCompile Include="src\StColors.c" />
+    <ClCompile Include="src\StName.c" />
+    <ClCompile Include="src\StNColor.c" />
+    <ClCompile Include="src\StrKeysym.c" />
+    <ClCompile Include="src\StrToText.c" />
+    <ClCompile Include="src\Sync.c" />
+    <ClCompile Include="src\Synchro.c" />
+    <ClCompile Include="src\Text.c" />
+    <ClCompile Include="src\Text16.c" />
+    <ClCompile Include="src\TextExt.c" />
+    <ClCompile Include="src\TextExt16.c" />
+    <ClCompile Include="src\TextToStr.c" />
+    <ClCompile Include="src\TrCoords.c" />
+    <ClCompile Include="src\UndefCurs.c" />
+    <ClCompile Include="src\UngrabBut.c" />
+    <ClCompile Include="src\UngrabKbd.c" />
+    <ClCompile Include="src\UngrabKey.c" />
+    <ClCompile Include="src\UngrabPtr.c" />
+    <ClCompile Include="src\UngrabSvr.c" />
+    <ClCompile Include="src\UninsCmap.c" />
+    <ClCompile Include="src\UnldFont.c" />
+    <ClCompile Include="src\UnmapSubs.c" />
+    <ClCompile Include="src\UnmapWin.c" />
+    <ClCompile Include="src\VisUtil.c" />
+    <ClCompile Include="src\WarpPtr.c" />
+    <ClCompile Include="src\Window.c" />
+    <ClCompile Include="src\WinEvent.c" />
+    <ClCompile Include="src\Withdraw.c" />
+    <ClCompile Include="src\WMGeom.c" />
+    <ClCompile Include="src\WMProps.c" />
+    <ClCompile Include="src\WrBitF.c" />
+    <ClCompile Include="src\x11_xcb.c" />
+    <ClCompile Include="src\xcb_disp.c" />
+    <ClCompile Include="src\xcb_io.c" />
+    <ClCompile Include="src\XlibAsync.c" />
+    <ClCompile Include="src\XlibInt.c" />
+    <ClCompile Include="src\Xrm.c" />
+    <ClCompile Include="src\util\makekeys.c">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\AddDIC.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\AddSF.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\CCC.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\cmsAllCol.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\cmsAllNCol.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\cmsCmap.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\cmsColNm.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\cmsGlobls.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\cmsInt.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\cmsLkCol.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\cmsMath.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\cmsProp.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\cmsTrig.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\CvCols.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\CvColW.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\HVC.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\HVCGcC.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\HVCGcV.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\HVCGcVC.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\HVCMnV.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\HVCMxC.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\HVCMxV.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\HVCMxVC.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\HVCMxVs.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\HVCWpAj.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\IdOfPr.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\Lab.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\LabGcC.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\LabGcL.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\LabGcLC.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\LabMnL.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\LabMxC.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\LabMxL.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\LabMxLC.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\LabWpAj.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\LRGB.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\Luv.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\LuvGcC.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\LuvGcL.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\LuvGcLC.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\LuvMnL.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\LuvMxC.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\LuvMxL.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\LuvMxLC.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\LuvWpAj.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\OfCCC.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\PrOfId.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\QBlack.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\QBlue.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\QGreen.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\QRed.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\QuCol.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\QuCols.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\QWhite.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\SetCCC.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\SetGetCols.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\StCol.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\StCols.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\UNDEFINED.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\uvY.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\XRGB.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\xyY.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xcms\XYZ.c">
+      <Filter>xcms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKB.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKBAlloc.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKBBell.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKBBind.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKBCompat.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKBCtrls.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKBCvt.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKBExtDev.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKBGAlloc.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKBGeom.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKBGetByName.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKBGetMap.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKBleds.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKBList.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKBMAlloc.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKBMisc.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKBNames.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKBRdBuf.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKBSetGeom.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKBSetMap.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xkb\XKBUse.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\ICWrap.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\imKStoUCS.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\IMWrap.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\lcCharSet.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\lcConv.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\lcCT.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\lcDB.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\lcDynamic.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\lcFile.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\lcGeneric.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\lcInit.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\lcPrTxt.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\lcPublic.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\lcPubWrap.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\lcRM.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\lcStd.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\lcTxtPr.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\lcUTF8.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\lcUtil.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\lcWrap.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\mbWMProps.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\mbWrap.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\utf8WMProps.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\utf8Wrap.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\wcWrap.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\XDefaultIMIF.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\XDefaultOMIF.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\xim_trans.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\XlcDL.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\XlcSL.c">
+      <Filter>xlibi18n</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\lcUniConv\8bit_tab_to_h.c">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xlibi18n\lcUniConv\cjk_tab_to_h.c">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\modules\lc\def\lcDefConv.c">
+      <Filter>modules\lc\def</Filter>
+    </ClCompile>
+    <ClCompile Include="src\modules\lc\gen\lcGenConv.c">
+      <Filter>modules\lc\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\modules\lc\Utf8\lcUTF8Load.c">
+      <Filter>modules\lc\Utf8</Filter>
+    </ClCompile>
+    <ClCompile Include="src\modules\om\generic\omDefault.c">
+      <Filter>modules\om\generic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\modules\om\generic\omGeneric.c">
+      <Filter>modules\om\generic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\modules\om\generic\omImText.c">
+      <Filter>modules\om\generic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\modules\om\generic\omText.c">
+      <Filter>modules\om\generic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\modules\om\generic\omTextEsc.c">
+      <Filter>modules\om\generic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\modules\om\generic\omTextExt.c">
+      <Filter>modules\om\generic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\modules\om\generic\omTextPer.c">
+      <Filter>modules\om\generic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\modules\om\generic\omXChar.c">
+      <Filter>modules\om\generic</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Cmap.h" />
+    <ClInclude Include="src\Cr.h" />
+    <ClInclude Include="src\Key.h" />
+    <ClInclude Include="src\locking.h" />
+    <ClInclude Include="src\pathmax.h" />
+    <ClInclude Include="src\poly.h" />
+    <ClInclude Include="src\utlist.h" />
+    <ClInclude Include="src\Xatomtype.h" />
+    <ClInclude Include="src\Xintatom.h" />
+    <ClInclude Include="src\Xintconn.h" />
+    <ClInclude Include="src\XomGeneric.h" />
+    <ClInclude Include="src\Xprivate.h" />
+    <ClInclude Include="src\Xresinternal.h" />
+    <ClInclude Include="src\Xxcbint.h" />
+    <ClInclude Include="src\xcms\Cv.h">
+      <Filter>xcms</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xcms\Xcmsint.h">
+      <Filter>xcms</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xkb\XKBlibint.h">
+      <Filter>xkb</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\Xaixlcint.h">
+      <Filter>xlibi18n</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\XimImSw.h">
+      <Filter>xlibi18n</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\Ximint.h">
+      <Filter>xlibi18n</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\XimintL.h">
+      <Filter>xlibi18n</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\XimintP.h">
+      <Filter>xlibi18n</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\XimProto.h">
+      <Filter>xlibi18n</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\XimThai.h">
+      <Filter>xlibi18n</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\XimTrans.h">
+      <Filter>xlibi18n</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\XimTrInt.h">
+      <Filter>xlibi18n</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\XimTrX.h">
+      <Filter>xlibi18n</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\XlcGeneric.h">
+      <Filter>xlibi18n</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\Xlcint.h">
+      <Filter>xlibi18n</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\XlcPubI.h">
+      <Filter>xlibi18n</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\XlcPublic.h">
+      <Filter>xlibi18n</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\armscii_8.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\ascii.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\big5.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\big5_emacs.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\big5hkscs.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\cp1133.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\cp1251.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\cp1255.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\cp1256.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\gb2312.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\gbk.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\georgian_academy.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\georgian_ps.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\iso8859_1.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\iso8859_2.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\iso8859_3.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\iso8859_4.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\iso8859_5.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\iso8859_6.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\iso8859_7.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\iso8859_8.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\iso8859_9.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\iso8859_9e.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\iso8859_10.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\iso8859_11.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\iso8859_13.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\iso8859_14.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\iso8859_15.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\iso8859_16.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\jisx0201.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\jisx0208.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\jisx0212.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\koi8_c.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\koi8_r.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\koi8_u.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\ksc5601.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\mulelao.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\tatar_cyr.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\tcvn.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\tis620.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\ucs2be.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\utf8.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xlibi18n\lcUniConv\viscii.h">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\Makefile.am" />
+    <None Include="src\XErrorDB" />
+    <None Include="src\xcms\Makefile.am">
+      <Filter>xcms</Filter>
+    </None>
+    <None Include="src\xlibi18n\Makefile.am">
+      <Filter>xlibi18n</Filter>
+    </None>
+    <None Include="src\xlibi18n\lcUniConv\COPYRIGHT">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </None>
+    <None Include="src\xlibi18n\lcUniConv\README">
+      <Filter>xlibi18n\lcUniConv</Filter>
+    </None>
+    <None Include="src\modules\om\generic\Makefile.am">
+      <Filter>modules\om\generic</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="util">
+      <UniqueIdentifier>{e8fbc26a-5ca9-41de-af89-7a6dadb39286}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xcms">
+      <UniqueIdentifier>{e2f81e3e-bc63-4b18-9f7c-610e2bdf767f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xkb">
+      <UniqueIdentifier>{586d8bc5-f970-4914-8c3b-a33fc172a348}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xlibi18n">
+      <UniqueIdentifier>{a3f85104-d613-479d-a368-99a2b0fc3056}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xlibi18n\lcUniConv">
+      <UniqueIdentifier>{ad0c5432-8b5c-4376-926d-d8ba39062d3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules">
+      <UniqueIdentifier>{f93aea4a-a804-4f3a-bfee-05d64d521afe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\lc">
+      <UniqueIdentifier>{8ba5861d-5bce-4d0c-bccd-44b5d11683e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\lc\def">
+      <UniqueIdentifier>{d073d762-db51-4533-93fc-3f2140a2ce4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\lc\gen">
+      <UniqueIdentifier>{a7ef2e41-27a3-4434-8f1c-5fec8c247b20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\lc\Utf8">
+      <UniqueIdentifier>{d21fbf63-7171-4197-8fa5-c8371c1a4885}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\om">
+      <UniqueIdentifier>{f2a9bae3-f569-46ab-8523-ec2b321dac6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\om\generic">
+      <UniqueIdentifier>{c458ad2a-6069-4578-b0f1-04b79b78da65}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\xcms\Xcms.txt">
+      <Filter>xcms</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

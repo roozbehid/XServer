@@ -1154,7 +1154,7 @@ void
 AssignTypeAndName(DeviceIntPtr dev, Atom type, char *name)
 {
     dev->xinput_type = type;
-    dev->name = strdup(name);
+    dev->name = _strdup(name);
 }
 
 /***********************************************************************

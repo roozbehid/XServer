@@ -1,5 +1,5 @@
 #!/bin/sh
-hfile=../../../include/Xatom.h
+hfile=../sys_include/X11/Xatom.h
 cfile=initatoms.c
 rm -f $hfile $cfile
 umask 222

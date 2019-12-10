@@ -38,9 +38,9 @@ from The Open Group.
 #include "extnsionst.h"
 #include <X11/extensions/bigreqsproto.h>
 #include "opaque.h"
-#include "modinit.h"
+////#include "modinit.h"
 
-void BigReqExtensionInit(INITARGS);
+////void BigReqExtensionInit(INITARGS);
 
 static int
 ProcBigReqDispatch (ClientPtr client)
@@ -70,7 +70,7 @@ ProcBigReqDispatch (ClientPtr client)
 }
 
 void
-BigReqExtensionInit(INITARGS)
+BigReqExtensionInit(void)
 {
     AddExtension(XBigReqExtensionName, 0, 0,
 		 ProcBigReqDispatch, ProcBigReqDispatch,

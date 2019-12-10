@@ -65,7 +65,11 @@ SOFTWARE.
 #include <dix-config.h>
 #endif
 
-#ifdef WIN32
+#ifdef CUSTOMSOCKET
+#include "../pipesocket/pipesocket.h"
+#endif
+
+#if defined(WIN32) && !defined(CUSTOMSOCKET)
 #include <X11/Xwinsock.h>
 #endif
 #include <X11/X.h>
@@ -350,6 +354,10 @@ InitParentProcess(void)
 void
 NotifyParentProcess(void)
 {
+#ifdef CUSTOMSOCKET
+	printf("NotifyParentProcess\n");
+	return;
+#endif
 #if !defined(WIN32)
     if (RunFromSmartParent) {
 	if (ParentProcess > 1) {
@@ -405,6 +413,7 @@ CreateWellKnownSockets(void)
 		int fd = _XSERVTransGetConnectionNumber (ListenTransConns[i]);
 		
 		ListenTransFds[i] = fd;
+
 		FD_SET (fd, &WellKnownConnections);
 
 		if (!_XSERVTransIsLocal (ListenTransConns[i]))
@@ -513,7 +522,7 @@ AuthAudit (ClientPtr client, Bool letin,
 	switch (saddr->sa_family)
 	{
 	case AF_UNSPEC:
-#if defined(UNIXCONN) || defined(LOCALCONN)
+#if defined(UNIXCONN) || defined(LOCALCONN) || defined(LOCALCONNPIPE)
 	case AF_UNIX:
 #endif
 	    strcpy(out, "local host");

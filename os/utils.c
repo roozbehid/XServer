@@ -208,16 +208,7 @@ int auditTrailLevel = 1;
 OsSigHandlerPtr
 OsSignal(int sig, OsSigHandlerPtr handler)
 {
-    struct sigaction act, oact;
-
-    sigemptyset(&act.sa_mask);
-    if (handler != SIG_IGN)
-	sigaddset(&act.sa_mask, sig);
-    act.sa_flags = 0;
-    act.sa_handler = handler;
-    if (sigaction(sig, &act, &oact))
-      perror("sigaction");
-    return oact.sa_handler;
+   
 }
 
 /*
@@ -232,8 +223,8 @@ OsSignal(int sig, OsSigHandlerPtr handler)
 #define LOCK_SUFFIX "-lock"
 
 static Bool StillLocking = FALSE;
-static char LockFile[PATH_MAX];
-static Bool nolock = FALSE;
+static char _LockFile[PATH_MAX];
+static Bool nolock = TRUE;
 
 /*
  * LockServer --
@@ -260,10 +251,10 @@ LockServer(void)
   len = strlen(LOCK_PREFIX) > strlen(LOCK_TMP_PREFIX) ? strlen(LOCK_PREFIX) :
 						strlen(LOCK_TMP_PREFIX);
   len += strlen(tmppath) + strlen(port) + strlen(LOCK_SUFFIX) + 1;
-  if (len > sizeof(LockFile))
+  if (len > sizeof(_LockFile))
     FatalError("Display name `%s' is too long\n", port);
   (void)sprintf(tmp, "%s" LOCK_TMP_PREFIX "%s" LOCK_SUFFIX, tmppath, port);
-  (void)sprintf(LockFile, "%s" LOCK_PREFIX "%s" LOCK_SUFFIX, tmppath, port);
+  (void)sprintf(_LockFile, "%s" LOCK_PREFIX "%s" LOCK_SUFFIX, tmppath, port);
 
   /*
    * Create a temporary file containing our PID.  Attempt three times
@@ -280,7 +271,7 @@ LockServer(void)
        break;
   } while (i < 3);
   if (lfd < 0) {
-    unlink(tmp);
+    /////_unlink(tmp);
     i = 0;
     do {
       i++;
@@ -295,7 +286,7 @@ LockServer(void)
     FatalError("Could not create lock file in %s\n", tmp);
   (void) sprintf(pid_str, "%10ld\n", (long)getpid());
   (void) write(lfd, pid_str, 11);
-  (void) fchmod(lfd, 0444);
+  ////(void) fchmod(lfd, 0444);
   (void) close(lfd);
 
   /*
@@ -305,7 +296,8 @@ LockServer(void)
   i = 0;
   haslock = 0;
   while ((!haslock) && (i++ < 3)) {
-    haslock = (link(tmp,LockFile) == 0);
+    ////haslock = (link(tmp,_LockFile) == 0);
+	  haslock = 1;
     if (haslock) {
       /*
        * We're done.
@@ -316,17 +308,17 @@ LockServer(void)
       /*
        * Read the pid from the existing file
        */
-      lfd = open(LockFile, O_RDONLY|O_NOFOLLOW);
+      lfd = open(_LockFile, O_RDONLY/*|O_NOFOLLOW*/);
       if (lfd < 0) {
-        unlink(tmp);
-        FatalError("Can't read lock file %s\n", LockFile);
+        ////_unlink(tmp);
+        FatalError("Can't read lock file %s\n", _LockFile);
       }
       pid_str[0] = '\0';
       if (read(lfd, pid_str, 11) != 11) {
         /*
          * Bogus lock file.
          */
-        unlink(LockFile);
+        /////_unlink(_LockFile);
         close(lfd);
         continue;
       }
@@ -338,28 +330,29 @@ LockServer(void)
        * Now try to kill the PID to see if it exists.
        */
       errno = 0;
-      t = kill(l_pid, 0);
+      ////t = kill(l_pid, 0);
+	  t = 0;
       if ((t< 0) && (errno == ESRCH)) {
         /*
          * Stale lock file.
          */
-        unlink(LockFile);
+        //////_unlink(_LockFile);
         continue;
       }
       else if (((t < 0) && (errno == EPERM)) || (t == 0)) {
         /*
          * Process is still active.
          */
-        unlink(tmp);
+        /////_unlink(tmp);
 	FatalError("Server is already active for display %s\n%s %s\n%s\n",
 		   port, "\tIf this server is no longer running, remove",
-		   LockFile, "\tand start again.");
+		   _LockFile, "\tand start again.");
       }
     }
   }
-  unlink(tmp);
+ ////_unlink(tmp);
   if (!haslock)
-    FatalError("Could not create server lock file: %s\n", LockFile);
+    FatalError("Could not create server lock file: %s\n", _LockFile);
   StillLocking = FALSE;
 }
 
@@ -374,7 +367,7 @@ UnlockServer(void)
 
   if (!StillLocking){
 
-  (void) unlink(LockFile);
+  //////(void) _unlink(_LockFile);
   }
 }
 
@@ -641,7 +634,7 @@ ProcessCommandLine(int argc, char *argv[])
 	}
 	else if ( strcmp( argv[i], "-core") == 0)
 	{
-#if !defined(WIN32) || !defined(__MINGW32__)
+#if !defined(WIN32) && !defined(__MINGW32__)
 	    struct rlimit   core_limit;
 	    getrlimit (RLIMIT_CORE, &core_limit);
 	    core_limit.rlim_cur = core_limit.rlim_max;
@@ -1102,7 +1095,7 @@ Xstrdup(const char *s)
 {
     if (s == NULL)
 	return NULL;
-    return strdup(s);
+    return _strdup(s);
 }
 
 char *
@@ -1113,7 +1106,7 @@ XNFstrdup(const char *s)
     if (s == NULL)
 	return NULL;
 
-    ret = strdup(s);
+    ret = _strdup(s);
     if (!ret)
 	FatalError("XNFstrdup: Out of memory");
     return ret;
@@ -1122,6 +1115,7 @@ XNFstrdup(const char *s)
 void
 SmartScheduleStopTimer (void)
 {
+#ifdef SMART_SCHEDULE_POSSIBLE
     struct itimerval	timer;
     
     if (SmartScheduleDisable)
@@ -1131,11 +1125,13 @@ SmartScheduleStopTimer (void)
     timer.it_value.tv_sec = 0;
     timer.it_value.tv_usec = 0;
     (void) setitimer (ITIMER_REAL, &timer, 0);
+#endif
 }
 
 void
 SmartScheduleStartTimer (void)
 {
+#ifdef SMART_SCHEDULE_POSSIBLE
     struct itimerval	timer;
     
     if (SmartScheduleDisable)
@@ -1145,6 +1141,7 @@ SmartScheduleStartTimer (void)
     timer.it_value.tv_sec = 0;
     timer.it_value.tv_usec = SmartScheduleInterval * 1000;
     setitimer (ITIMER_REAL, &timer, 0);
+#endif
 }
 
 static void
@@ -1156,6 +1153,7 @@ SmartScheduleTimer (int sig)
 void
 SmartScheduleInit (void)
 {
+#ifdef SMART_SCHEDULE_POSSIBLE
     struct sigaction	act;
 
     if (SmartScheduleDisable)
@@ -1172,6 +1170,7 @@ SmartScheduleInit (void)
 	perror ("sigaction for smart scheduler");
 	SmartScheduleDisable = TRUE;
     }
+#endif
 }
 
 #ifdef SIG_BLOCK
@@ -1801,7 +1800,7 @@ xstrtokenize(const char *str, const char *separators)
     list = calloc(1, sizeof(*list));
     if (!list)
         return NULL;
-    tmp = strdup(str);
+    tmp = _strdup(str);
     if (!tmp)
         goto error;
     for (tok = strtok(tmp, separators); tok; tok = strtok(NULL, separators)) {
@@ -1809,7 +1808,7 @@ xstrtokenize(const char *str, const char *separators)
         if (!nlist)
             goto error;
         list = nlist;
-        list[num] = strdup(tok);
+        list[num] = _strdup(tok);
         if (!list[num])
             goto error;
         list[++num] = NULL;
@@ -1823,4 +1822,76 @@ error:
         free(list[n]);
     free(list);
     return NULL;
+}
+
+const char *
+Win32TempDir(void)
+{
+	static char buffer[PATH_MAX];
+
+	if (getenv("TEMP") != NULL)
+		return getenv("TEMP");
+	else if (getenv("TMP") != NULL)
+		return getenv("TMP");
+	else
+		return "/tmp";
+#ifdef WIN32
+	if (GetTempPath(sizeof(buffer), buffer)) {
+		int len;
+
+		buffer[sizeof(buffer) - 1] = 0;
+		len = strlen(buffer);
+		if (len > 0)
+			if (buffer[len - 1] == '\\')
+				buffer[len - 1] = 0;
+		return buffer;
+	}
+#endif
+}
+
+int
+Win32System(const char *cmdline)
+{
+#ifdef WIN32
+	STARTUPINFO si;
+	PROCESS_INFORMATION pi;
+	DWORD dwExitCode;
+	char *cmd = _strdup(cmdline);
+
+	ZeroMemory(&si, sizeof(si));
+	si.cb = sizeof(si);
+	ZeroMemory(&pi, sizeof(pi));
+
+	if (!CreateProcess(NULL, cmd, NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi)) {
+		LPVOID buffer;
+
+		if (!FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER |
+			FORMAT_MESSAGE_FROM_SYSTEM |
+			FORMAT_MESSAGE_IGNORE_INSERTS,
+			NULL,
+			GetLastError(),
+			MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
+			(LPTSTR)&buffer, 0, NULL)) {
+			ErrorF("[xkb] Starting '%s' failed!\n", cmdline);
+		}
+		else {
+			ErrorF("[xkb] Starting '%s' failed: %s", cmdline, (char *)buffer);
+			LocalFree(buffer);
+		}
+
+		free(cmd);
+		return -1;
+	}
+	/* Wait until child process exits. */
+	WaitForSingleObject(pi.hProcess, INFINITE);
+
+	GetExitCodeProcess(pi.hProcess, &dwExitCode);
+
+	/* Close process and thread handles. */
+	CloseHandle(pi.hProcess);
+	CloseHandle(pi.hThread);
+	free(cmd);
+
+	return dwExitCode;
+#endif
 }

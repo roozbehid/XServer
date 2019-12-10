@@ -234,7 +234,7 @@ void DetermineClientCmd(pid_t pid, const char **cmdname, const char **cmdargs)
     /* Contruct the process name without arguments. */
     if (cmdname)
     {
-        *cmdname = strdup(path);
+        *cmdname = _strdup(path);
     }
 
     /* Construct the arguments for client process. */

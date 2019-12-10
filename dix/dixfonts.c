@@ -569,7 +569,7 @@ doListFontsAndAliases(ClientPtr client, LFclosurePtr c)
     FontPathElementPtr fpe;
     int         err = Successful;
     FontNamesPtr names = NULL;
-    char       *name, *resolved=NULL;
+    char       *name=NULL, *resolved=NULL;
     int         namelen, resolvedlen;
     int		nnames;
     int         stringLens;
@@ -876,11 +876,11 @@ doListFontsWithInfo(ClientPtr client, LFWIclosurePtr c)
 {
     FontPathElementPtr fpe;
     int         err = Successful;
-    char       *name;
+    char       *name=NULL;
     int         namelen;
     int         numFonts;
     FontInfoRec fontInfo,
-               *pFontInfo;
+               *pFontInfo=NULL;
     xListFontsWithInfoReply *reply;
     int         length;
     xFontProp  *pFP;
@@ -1807,7 +1807,7 @@ SetDefaultFontPath(char *path)
 	    == -1)
 	    temp_path = NULL;
     } else {
-	temp_path = strdup(path);
+	temp_path = _strdup(path);
     }
     if (!temp_path)
         return BadAlloc;

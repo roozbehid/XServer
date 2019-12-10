@@ -672,12 +672,16 @@ InitCoreDevices(void)
                         TRUE) != Success)
         FatalError("Failed to allocate core devices");
 
-    if (ActivateDevice(inputInfo.pointer, TRUE) != Success ||
-        ActivateDevice(inputInfo.keyboard, TRUE) != Success)
-        FatalError("Failed to activate core devices.");
-    if (!EnableDevice(inputInfo.pointer, TRUE) ||
-        !EnableDevice(inputInfo.keyboard, TRUE))
-        FatalError("Failed to enable core devices.");
+	if (ActivateDevice(inputInfo.pointer, TRUE) != Success ||
+		ActivateDevice(inputInfo.keyboard, TRUE) != Success)
+	{
+		FatalError("Failed to activate core devices.");
+	}
+	if (!EnableDevice(inputInfo.pointer, TRUE) ||
+		!EnableDevice(inputInfo.keyboard, TRUE))
+	{
+		FatalError("Failed to enable core devices.");
+	}
 
     InitXTestDevices();
 }

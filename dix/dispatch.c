@@ -347,6 +347,7 @@ Dispatch(void)
     HWEventQueuePtr* icheck = checkForInput;
     long			start_tick;
 
+	printf("Dispatch\n");
     nextFreeClientID = 1;
     nClients = 0;
 
@@ -1004,6 +1005,8 @@ ProcQueryTree(ClientPtr client)
     return Success;
 }
 
+extern Atom
+dix_MakeAtom(const char* string, unsigned len, Bool makeit);
 int
 ProcInternAtom(ClientPtr client)
 {
@@ -1018,7 +1021,7 @@ ProcInternAtom(ClientPtr client)
         return BadValue;
     }
     tchar = (char *) &stuff[1];
-    atom = MakeAtom(tchar, stuff->nbytes, !stuff->onlyIfExists);
+    atom = dix_MakeAtom(tchar, stuff->nbytes, !stuff->onlyIfExists);
     if (atom != BAD_RESOURCE)
     {
 	xInternAtomReply reply;
@@ -1034,6 +1037,9 @@ ProcInternAtom(ClientPtr client)
 	return BadAlloc;
 }
 
+extern const char*
+dix_NameForAtom(Atom atom);
+
 int
 ProcGetAtomName(ClientPtr client)
 {
@@ -1043,7 +1049,7 @@ ProcGetAtomName(ClientPtr client)
     REQUEST(xResourceReq);
 
     REQUEST_SIZE_MATCH(xResourceReq);
-    if ( (str = NameForAtom(stuff->id)) )
+    if ( (str = dix_NameForAtom(stuff->id)) )
     {
 	len = strlen(str);
 	memset(&reply, 0, sizeof(xGetAtomNameReply));
@@ -3524,6 +3530,7 @@ void InitClient(ClientPtr client, int i, pointer ospriv)
 
 ClientPtr NextAvailableClient(pointer ospriv)
 {
+	printf("NextAvailableClient\n");
     int i;
     ClientPtr client;
     xReq data;
@@ -3572,6 +3579,7 @@ ClientPtr NextAvailableClient(pointer ospriv)
 int
 ProcInitialConnection(ClientPtr client)
 {
+	printf("ProcInitialConnection\n");
     REQUEST(xReq);
     xConnClientPrefix *prefix;
     int whichbyte = 1;

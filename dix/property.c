@@ -120,6 +120,8 @@ deliverPropertyNotifyEvent(WindowPtr pWin, int state, Atom atom)
     DeliverEvents(pWin, &event, 1, (WindowPtr)NULL);
 }
 
+extern Bool
+dix_ValidAtom(Atom atom);
 int
 ProcRotateProperties(ClientPtr client)
 {
@@ -146,7 +148,7 @@ ProcRotateProperties(ClientPtr client)
 
     for (i = 0; i < stuff->nAtoms; i++)
     {
-        if (!ValidAtom(atoms[i])) {
+        if (!dix_ValidAtom(atoms[i])) {
 	    rc = BadAtom;
 	    client->errorValue = atoms[i];
 	    goto out;
@@ -227,12 +229,12 @@ ProcChangeProperty(ClientPtr client)
     err = dixLookupWindow(&pWin, stuff->window, client, DixSetPropAccess);
     if (err != Success)
 	return err;
-    if (!ValidAtom(stuff->property))
+    if (!dix_ValidAtom(stuff->property))
     {
 	client->errorValue = stuff->property;
 	return BadAtom;
     }
-    if (!ValidAtom(stuff->type))
+    if (!dix_ValidAtom(stuff->type))
     {
 	client->errorValue = stuff->type;
 	return BadAtom;
@@ -476,7 +478,7 @@ ProcGetProperty(ClientPtr client)
     if (rc != Success)
 	return (rc == BadMatch) ? BadWindow : rc;
 
-    if (!ValidAtom(stuff->property))
+    if (!dix_ValidAtom(stuff->property))
     {
 	client->errorValue = stuff->property;
 	return BadAtom;
@@ -486,7 +488,7 @@ ProcGetProperty(ClientPtr client)
 	client->errorValue = stuff->delete;
 	return BadValue;
     }
-    if ((stuff->type != AnyPropertyType) && !ValidAtom(stuff->type))
+    if ((stuff->type != AnyPropertyType) && !dix_ValidAtom(stuff->type))
     {
 	client->errorValue = stuff->type;
 	return BadAtom;
@@ -634,7 +636,7 @@ ProcDeleteProperty(ClientPtr client)
     result = dixLookupWindow(&pWin, stuff->window, client, DixSetPropAccess);
     if (result != Success)
         return result;
-    if (!ValidAtom(stuff->property))
+    if (!dix_ValidAtom(stuff->property))
     {
 	client->errorValue = stuff->property;
 	return BadAtom;

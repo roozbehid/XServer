@@ -1691,6 +1691,7 @@ InputClientGone(WindowPtr pWin, XID id)
 	prev = other;
     }
     FatalError("client not on device event list");
+	return 1;
 }
 
 int

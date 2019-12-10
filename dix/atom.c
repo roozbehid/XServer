@@ -75,7 +75,7 @@ static NodePtr *nodeTable;
 void FreeAtom(NodePtr patom);
 
 Atom
-MakeAtom(const char *string, unsigned len, Bool makeit)
+dix_MakeAtom(const char *string, unsigned len, Bool makeit)
 {
     NodePtr * np;
     unsigned i;
@@ -154,13 +154,13 @@ MakeAtom(const char *string, unsigned len, Bool makeit)
 }
 
 Bool
-ValidAtom(Atom atom)
+dix_ValidAtom(Atom atom)
 {
     return (atom != None) && (atom <= lastAtom);
 }
 
 const char *
-NameForAtom(Atom atom)
+dix_NameForAtom(Atom atom)
 {
     NodePtr node;
     if (atom > lastAtom) return 0;

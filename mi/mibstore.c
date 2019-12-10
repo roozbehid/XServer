@@ -37,7 +37,7 @@
  * for the implementation.
  */
 
-void
-miInitializeBackingStore (ScreenPtr pScreen)
-{
-}
+//void
+//miInitializeBackingStore (ScreenPtr pScreen)
+//{
+//}

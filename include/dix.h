@@ -65,6 +65,7 @@ SOFTWARE.
 #define REQUEST(type) \
 	type *stuff = (type *)client->requestBuffer
 
+#define ARRAY_SIZE(a)  (sizeof((a)) / sizeof((a)[0]))
 
 #define REQUEST_SIZE_MATCH(req)\
     if ((sizeof(req) >> 2) != client->req_len)\
@@ -74,9 +75,14 @@ SOFTWARE.
     if ((sizeof(req) >> 2) > client->req_len )\
          return(BadLength)
 
+#define REQUEST_AT_LEAST_EXTRA_SIZE(req, extra)  \
+    if (((sizeof(req) + ((uint64_t) extra)) >> 2) > client->req_len ) \
+         return(BadLength)
+
 #define REQUEST_FIXED_SIZE(req, n)\
     if (((sizeof(req) >> 2) > client->req_len) || \
-        (((sizeof(req) + (n) + 3) >> 2) != client->req_len)) \
+        (((n) >> 2) >= client->req_len) ||                              \
+        ((((uint64_t) sizeof(req) + (n) + 3) >> 2) != (uint64_t) client->req_len))  \
          return(BadLength)
 
 #define LEGAL_NEW_RESOURCE(id,client)\
@@ -88,12 +94,12 @@ SOFTWARE.
 
 #define VALIDATE_DRAWABLE_AND_GC(drawID, pDraw, mode)\
     {\
-	int rc = dixLookupDrawable(&(pDraw), drawID, client, M_ANY, mode);\
-	if (rc != Success)\
-	    return rc;\
-	rc = dixLookupGC(&(pGC), stuff->gc, client, DixUseAccess);\
-	if (rc != Success)\
-	    return rc;\
+	int tmprc = dixLookupDrawable(&(pDraw), drawID, client, M_ANY, mode);\
+	if (tmprc != Success)\
+	    return tmprc;\
+	tmprc = dixLookupGC(&(pGC), stuff->gc, client, DixUseAccess);\
+	if (tmprc != Success)\
+	    return tmprc;\
 	if ((pGC->depth != pDraw->depth) || (pGC->pScreen != pDraw->pScreen))\
 	    return BadMatch;\
     }\
@@ -105,12 +111,12 @@ SOFTWARE.
    if ((pClient)->swapped) \
       (*ReplySwapVector[((xReq *)(pClient)->requestBuffer)->reqType]) \
            (pClient, (int)(size), pReply); \
-      else (void) WriteToClient(pClient, (int)(size), (char *)(pReply)); }
+   else WriteToClient(pClient, (int)(size), (pReply)); }
 
 #define WriteSwappedDataToClient(pClient, size, pbuf) \
    if ((pClient)->swapped) \
       (*(pClient)->pSwapReplyFunc)(pClient, (int)(size), pbuf); \
-   else (void) WriteToClient (pClient, (int)(size), (char *)(pbuf));
+   else WriteToClient(pClient, (int)(size), (pbuf));
 
 typedef struct _TimeStamp *TimeStampPtr;
 
@@ -130,6 +136,12 @@ typedef int HWEventQueueType;
 typedef HWEventQueueType* HWEventQueuePtr;
 
 extern _X_EXPORT HWEventQueuePtr checkForInput[2];
+
+static inline Bool
+InputCheckPending(void)
+{
+    return (*checkForInput[0] != *checkForInput[1]);
+}
 
 typedef struct _TimeStamp {
     CARD32 months;	/* really ~49.7 days */
@@ -211,7 +223,7 @@ extern _X_EXPORT int dixLookupClient(
     ClientPtr client,
     Mask access_mode);
 
-extern _X_EXPORT void NoopDDA(void);
+extern _X_EXPORT void NoopDDA(int a, int b);
 
 extern _X_EXPORT int AlterSaveSetForClient(
     ClientPtr /*client*/,

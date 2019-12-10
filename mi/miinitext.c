@@ -412,9 +412,9 @@ InitExtensions(int argc, char *argv[])
       XvMCExtensionInit();
     }
 #endif
-    SyncExtensionInit();
+    ///SyncExtensionInit();
     XkbExtensionInit();
-    XCMiscExtensionInit();
+    ////XCMiscExtensionInit();
 #ifdef XRECORD
     if (!noTestExtensions) RecordExtensionInit(); 
 #endif

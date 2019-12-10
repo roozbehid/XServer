@@ -116,7 +116,7 @@ KdNewPointer (void)
     if (!pi)
         return NULL;
 
-    pi->name = strdup("Generic Pointer");
+    pi->name = _strdup("Generic Pointer");
     pi->path = NULL;
     pi->inputClass = KD_MOUSE;
     pi->driver = NULL;

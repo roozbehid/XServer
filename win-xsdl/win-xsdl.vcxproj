@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="WasmDebug|Win32">
+      <Configuration>WasmDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\dbe\dbe.c" />
+    <ClCompile Include="..\dbe\midbe.c" />
+    <ClCompile Include="..\dix\atom.c" />
+    <ClCompile Include="..\dix\colormap.c" />
+    <ClCompile Include="..\dix\cursor.c" />
+    <ClCompile Include="..\dix\devices.c" />
+    <ClCompile Include="..\dix\dispatch.c" />
+    <ClCompile Include="..\dix\dixfonts.c" />
+    <ClCompile Include="..\dix\dixutils.c" />
+    <ClCompile Include="..\dix\enterleave.c" />
+    <ClCompile Include="..\dix\eventconvert.c" />
+    <ClCompile Include="..\dix\events.c" />
+    <ClCompile Include="..\dix\extension.c" />
+    <ClCompile Include="..\dix\ffs.c" />
+    <ClCompile Include="..\dix\gc.c" />
+    <ClCompile Include="..\dix\getevents.c" />
+    <ClCompile Include="..\dix\globals.c" />
+    <ClCompile Include="..\dix\glyphcurs.c" />
+    <ClCompile Include="..\dix\grabs.c" />
+    <ClCompile Include="..\dix\initatoms.c" />
+    <ClCompile Include="..\dix\inpututils.c" />
+    <ClCompile Include="..\dix\main.c" />
+    <ClCompile Include="..\dix\pixmap.c" />
+    <ClCompile Include="..\dix\privates.c" />
+    <ClCompile Include="..\dix\property.c" />
+    <ClCompile Include="..\dix\ptrveloc.c" />
+    <ClCompile Include="..\dix\region.c" />
+    <ClCompile Include="..\dix\registry.c" />
+    <ClCompile Include="..\dix\resource.c" />
+    <ClCompile Include="..\dix\selection.c" />
+    <ClCompile Include="..\dix\swaprep.c" />
+    <ClCompile Include="..\dix\swapreq.c" />
+    <ClCompile Include="..\dix\tables.c" />
+    <ClCompile Include="..\dix\window.c" />
+    <ClCompile Include="..\fb\fb24_32.c" />
+    <ClCompile Include="..\fb\fballpriv.c" />
+    <ClCompile Include="..\fb\fbarc.c" />
+    <ClCompile Include="..\fb\fbbits.c" />
+    <ClCompile Include="..\fb\fbblt.c" />
+    <ClCompile Include="..\fb\fbbltone.c" />
+    <ClCompile Include="..\fb\fbcmap_mi.c" />
+    <ClCompile Include="..\fb\fbcopy.c" />
+    <ClCompile Include="..\fb\fbfill.c" />
+    <ClCompile Include="..\fb\fbfillrect.c" />
+    <ClCompile Include="..\fb\fbfillsp.c" />
+    <ClCompile Include="..\fb\fbgc.c" />
+    <ClCompile Include="..\fb\fbgetsp.c" />
+    <ClCompile Include="..\fb\fbglyph.c" />
+    <ClCompile Include="..\fb\fbimage.c" />
+    <ClCompile Include="..\fb\fbline.c" />
+    <ClCompile Include="..\fb\fboverlay.c" />
+    <ClCompile Include="..\fb\fbpict.c" />
+    <ClCompile Include="..\fb\fbpixmap.c" />
+    <ClCompile Include="..\fb\fbpoint.c" />
+    <ClCompile Include="..\fb\fbpush.c" />
+    <ClCompile Include="..\fb\fbscreen.c" />
+    <ClCompile Include="..\fb\fbseg.c" />
+    <ClCompile Include="..\fb\fbsetsp.c" />
+    <ClCompile Include="..\fb\fbsolid.c" />
+    <ClCompile Include="..\fb\fbstipple.c" />
+    <ClCompile Include="..\fb\fbtile.c" />
+    <ClCompile Include="..\fb\fbtrap.c" />
+    <ClCompile Include="..\fb\fbutil.c" />
+    <ClCompile Include="..\fb\fbwindow.c" />
+    <ClCompile Include="..\hw\kdrive\sdl\sdl.c" />
+    <ClCompile Include="..\hw\kdrive\src\kcmap.c" />
+    <ClCompile Include="..\hw\kdrive\src\kdrive.c" />
+    <ClCompile Include="..\hw\kdrive\src\kexeccmd.c" />
+    <ClCompile Include="..\hw\kdrive\src\kinfo.c" />
+    <ClCompile Include="..\hw\kdrive\src\kinput.c" />
+    <ClCompile Include="..\hw\kdrive\src\kmode.c" />
+    <ClCompile Include="..\hw\kdrive\src\kshadow.c" />
+    <ClCompile Include="..\lib\libXau-1.0.8\AuDispose.c" />
+    <ClCompile Include="..\lib\libXau-1.0.8\AuFileName.c" />
+    <ClCompile Include="..\lib\libXau-1.0.8\AuGetAddr.c" />
+    <ClCompile Include="..\lib\libXau-1.0.8\AuGetBest.c" />
+    <ClCompile Include="..\lib\libXau-1.0.8\AuLock.c" />
+    <ClCompile Include="..\lib\libXau-1.0.8\AuRead.c" />
+    <ClCompile Include="..\lib\libXau-1.0.8\AuUnlock.c" />
+    <ClCompile Include="..\lib\libXau-1.0.8\AuWrite.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\bitmap\bdfread.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\bitmap\bdfutils.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\bitmap\bitmap.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\bitmap\bitmapfunc.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\bitmap\bitmaputil.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\bitmap\bitscale.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\bitmap\fontink.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\bitmap\pcfread.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\bitmap\pcfwrite.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\bitmap\snfread.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\builtins\dir.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\builtins\file.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\builtins\fonts.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\builtins\fpe.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\builtins\render.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fc\fsconvert.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fc\fserve.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fc\fsio.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fc\fstrans.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\bitsource.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\bufio.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\catalogue.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\decompress.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\defaults.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\dirfile.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\fileio.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\filewr.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\fontdir.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\fontfile.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\fontscale.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\gunzip.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\register.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\renderers.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\util\atom.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\util\fontaccel.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\util\fontnames.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\util\fontutil.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\util\fontxlfd.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\util\format.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\util\miscutil.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\util\patcache.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\util\private.c" />
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\util\utilbitmap.c" />
+    <ClCompile Include="..\miext\damage\damage.c" />
+    <ClCompile Include="..\miext\shadow\shadow.c" />
+    <ClCompile Include="..\miext\shadow\shalloc.c" />
+    <ClCompile Include="..\miext\shadow\shpacked.c" />
+    <ClCompile Include="..\miext\shadow\shplanar.c" />
+    <ClCompile Include="..\miext\shadow\shplanar8.c" />
+    <ClCompile Include="..\miext\shadow\shrot16pack.c" />
+    <ClCompile Include="..\miext\shadow\shrot16pack_180.c" />
+    <ClCompile Include="..\miext\shadow\shrot16pack_270.c" />
+    <ClCompile Include="..\miext\shadow\shrot16pack_270YX.c" />
+    <ClCompile Include="..\miext\shadow\shrot16pack_90.c" />
+    <ClCompile Include="..\miext\shadow\shrot16pack_90YX.c" />
+    <ClCompile Include="..\miext\shadow\shrot32pack.c" />
+    <ClCompile Include="..\miext\shadow\shrot32pack_180.c" />
+    <ClCompile Include="..\miext\shadow\shrot32pack_270.c" />
+    <ClCompile Include="..\miext\shadow\shrot32pack_90.c" />
+    <ClCompile Include="..\miext\shadow\shrot8pack.c" />
+    <ClCompile Include="..\miext\shadow\shrot8pack_180.c" />
+    <ClCompile Include="..\miext\shadow\shrot8pack_270.c" />
+    <ClCompile Include="..\miext\shadow\shrot8pack_90.c" />
+    <ClCompile Include="..\miext\shadow\shrotate.c" />
+    <ClCompile Include="..\mi\miarc.c" />
+    <ClCompile Include="..\mi\mibitblt.c" />
+    <ClCompile Include="..\mi\mibstore.c" />
+    <ClCompile Include="..\mi\micmap.c" />
+    <ClCompile Include="..\mi\micopy.c" />
+    <ClCompile Include="..\mi\micursor.c" />
+    <ClCompile Include="..\mi\midash.c" />
+    <ClCompile Include="..\mi\midispcur.c" />
+    <ClCompile Include="..\mi\mieq.c" />
+    <ClCompile Include="..\mi\miexpose.c" />
+    <ClCompile Include="..\mi\mifillarc.c" />
+    <ClCompile Include="..\mi\mifillrct.c" />
+    <ClCompile Include="..\mi\mifpolycon.c" />
+    <ClCompile Include="..\mi\migc.c" />
+    <ClCompile Include="..\mi\miglblt.c" />
+    <ClCompile Include="..\mi\miinitext.c" />
+    <ClCompile Include="..\mi\mioverlay.c" />
+    <ClCompile Include="..\mi\mipointer.c" />
+    <ClCompile Include="..\mi\mipoly.c" />
+    <ClCompile Include="..\mi\mipolycon.c" />
+    <ClCompile Include="..\mi\mipolygen.c" />
+    <ClCompile Include="..\mi\mipolypnt.c" />
+    <ClCompile Include="..\mi\mipolyrect.c" />
+    <ClCompile Include="..\mi\mipolyseg.c" />
+    <ClCompile Include="..\mi\mipolytext.c" />
+    <ClCompile Include="..\mi\mipolyutil.c" />
+    <ClCompile Include="..\mi\mipushpxl.c" />
+    <ClCompile Include="..\mi\miscrinit.c" />
+    <ClCompile Include="..\mi\mispans.c" />
+    <ClCompile Include="..\mi\misprite.c" />
+    <ClCompile Include="..\mi\mivaltree.c" />
+    <ClCompile Include="..\mi\miwideline.c" />
+    <ClCompile Include="..\mi\miwindow.c" />
+    <ClCompile Include="..\mi\mizerarc.c" />
+    <ClCompile Include="..\mi\mizerclip.c" />
+    <ClCompile Include="..\mi\mizerline.c" />
+    <ClCompile Include="..\os\access.c" />
+    <ClCompile Include="..\os\auth.c" />
+    <ClCompile Include="..\os\client.c" />
+    <ClCompile Include="..\os\connection.c" />
+    <ClCompile Include="..\os\io.c" />
+    <ClCompile Include="..\os\log.c" />
+    <ClCompile Include="..\os\mitauth.c" />
+    <ClCompile Include="..\os\oscolor.c" />
+    <ClCompile Include="..\os\osinit.c" />
+    <ClCompile Include="..\os\strcasecmp.c" />
+    <ClCompile Include="..\os\strcasestr.c" />
+    <ClCompile Include="..\os\strlcat.c" />
+    <ClCompile Include="..\os\strlcpy.c" />
+    <ClCompile Include="..\os\utils.c" />
+    <ClCompile Include="..\os\WaitFor.c" />
+    <ClCompile Include="..\os\xprintf.c" />
+    <ClCompile Include="..\os\xsha1.c" />
+    <ClCompile Include="..\os\xstrans.c" />
+    <ClCompile Include="..\pixman\pixman-access-accessors.c" />
+    <ClCompile Include="..\pixman\pixman-access.c" />
+    <ClCompile Include="..\pixman\pixman-bits-image.c" />
+    <ClCompile Include="..\pixman\pixman-combine-float.c" />
+    <ClCompile Include="..\pixman\pixman-combine32.c" />
+    <ClCompile Include="..\pixman\pixman-conical-gradient.c" />
+    <ClCompile Include="..\pixman\pixman-edge-accessors.c" />
+    <ClCompile Include="..\pixman\pixman-edge.c" />
+    <ClCompile Include="..\pixman\pixman-fast-path.c" />
+    <ClCompile Include="..\pixman\pixman-filter.c" />
+    <ClCompile Include="..\pixman\pixman-general.c" />
+    <ClCompile Include="..\pixman\pixman-glyph.c" />
+    <ClCompile Include="..\pixman\pixman-gradient-walker.c" />
+    <ClCompile Include="..\pixman\pixman-image.c" />
+    <ClCompile Include="..\pixman\pixman-implementation.c" />
+    <ClCompile Include="..\pixman\pixman-linear-gradient.c" />
+    <ClCompile Include="..\pixman\pixman-matrix.c" />
+    <ClCompile Include="..\pixman\pixman-mmx.c" />
+    <ClCompile Include="..\pixman\pixman-noop.c" />
+    <ClCompile Include="..\pixman\pixman-ppc.c" />
+    <ClCompile Include="..\pixman\pixman-radial-gradient.c" />
+    <ClCompile Include="..\pixman\pixman-region16.c" />
+    <ClCompile Include="..\pixman\pixman-region32.c" />
+    <ClCompile Include="..\pixman\pixman-solid-fill.c" />
+    <ClCompile Include="..\pixman\pixman-timer.c" />
+    <ClCompile Include="..\pixman\pixman-trap.c" />
+    <ClCompile Include="..\pixman\pixman-utils.c" />
+    <ClCompile Include="..\pixman\pixman.c" />
+    <ClCompile Include="..\randr\randr.c" />
+    <ClCompile Include="..\randr\rrcrtc.c" />
+    <ClCompile Include="..\randr\rrdispatch.c" />
+    <ClCompile Include="..\randr\rrinfo.c" />
+    <ClCompile Include="..\randr\rrmode.c" />
+    <ClCompile Include="..\randr\rroutput.c" />
+    <ClCompile Include="..\randr\rrpointer.c" />
+    <ClCompile Include="..\randr\rrproperty.c" />
+    <ClCompile Include="..\randr\rrscreen.c" />
+    <ClCompile Include="..\randr\rrsdispatch.c" />
+    <ClCompile Include="..\randr\rrtransform.c" />
+    <ClCompile Include="..\render\animcur.c" />
+    <ClCompile Include="..\render\filter.c" />
+    <ClCompile Include="..\render\glyph.c" />
+    <ClCompile Include="..\render\matrix.c" />
+    <ClCompile Include="..\render\miindex.c" />
+    <ClCompile Include="..\render\mipict.c" />
+    <ClCompile Include="..\render\mirect.c" />
+    <ClCompile Include="..\render\mitrap.c" />
+    <ClCompile Include="..\render\mitri.c" />
+    <ClCompile Include="..\render\picture.c" />
+    <ClCompile Include="..\render\render.c" />
+    <ClCompile Include="..\sys_include\X11\Xtrans\transport.c" />
+    <ClCompile Include="..\Xext\bigreq.c" />
+    <ClCompile Include="..\Xext\geext.c" />
+    <ClCompile Include="..\Xext\shape.c" />
+    <ClCompile Include="..\Xext\sleepuntil.c" />
+    <ClCompile Include="..\Xext\xtest.c" />
+    <ClCompile Include="..\xfixes\cursor.c" />
+    <ClCompile Include="..\xfixes\region.c" />
+    <ClCompile Include="..\xfixes\saveset.c" />
+    <ClCompile Include="..\xfixes\select.c" />
+    <ClCompile Include="..\xfixes\xfixes.c" />
+    <ClCompile Include="..\Xi\allowev.c" />
+    <ClCompile Include="..\Xi\chgdctl.c" />
+    <ClCompile Include="..\Xi\chgfctl.c" />
+    <ClCompile Include="..\Xi\chgkbd.c" />
+    <ClCompile Include="..\Xi\chgkmap.c" />
+    <ClCompile Include="..\Xi\chgprop.c" />
+    <ClCompile Include="..\Xi\chgptr.c" />
+    <ClCompile Include="..\Xi\closedev.c" />
+    <ClCompile Include="..\Xi\devbell.c" />
+    <ClCompile Include="..\Xi\exevents.c" />
+    <ClCompile Include="..\Xi\extinit.c" />
+    <ClCompile Include="..\Xi\getbmap.c" />
+    <ClCompile Include="..\Xi\getdctl.c" />
+    <ClCompile Include="..\Xi\getfctl.c" />
+    <ClCompile Include="..\Xi\getfocus.c" />
+    <ClCompile Include="..\Xi\getkmap.c" />
+    <ClCompile Include="..\Xi\getmmap.c" />
+    <ClCompile Include="..\Xi\getprop.c" />
+    <ClCompile Include="..\Xi\getselev.c" />
+    <ClCompile Include="..\Xi\getvers.c" />
+    <ClCompile Include="..\Xi\grabdev.c" />
+    <ClCompile Include="..\Xi\grabdevb.c" />
+    <ClCompile Include="..\Xi\grabdevk.c" />
+    <ClCompile Include="..\Xi\gtmotion.c" />
+    <ClCompile Include="..\Xi\listdev.c" />
+    <ClCompile Include="..\Xi\opendev.c" />
+    <ClCompile Include="..\Xi\queryst.c" />
+    <ClCompile Include="..\Xi\selectev.c" />
+    <ClCompile Include="..\Xi\sendexev.c" />
+    <ClCompile Include="..\Xi\setbmap.c" />
+    <ClCompile Include="..\Xi\setdval.c" />
+    <ClCompile Include="..\Xi\setfocus.c" />
+    <ClCompile Include="..\Xi\setmmap.c" />
+    <ClCompile Include="..\Xi\setmode.c" />
+    <ClCompile Include="..\Xi\ungrdev.c" />
+    <ClCompile Include="..\Xi\ungrdevb.c" />
+    <ClCompile Include="..\Xi\ungrdevk.c" />
+    <ClCompile Include="..\Xi\xiallowev.c" />
+    <ClCompile Include="..\Xi\xichangecursor.c" />
+    <ClCompile Include="..\Xi\xichangehierarchy.c" />
+    <ClCompile Include="..\Xi\xigetclientpointer.c" />
+    <ClCompile Include="..\Xi\xigrabdev.c" />
+    <ClCompile Include="..\Xi\xipassivegrab.c" />
+    <ClCompile Include="..\Xi\xiproperty.c" />
+    <ClCompile Include="..\Xi\xiquerydevice.c" />
+    <ClCompile Include="..\Xi\xiquerypointer.c" />
+    <ClCompile Include="..\Xi\xiqueryversion.c" />
+    <ClCompile Include="..\Xi\xiselectev.c" />
+    <ClCompile Include="..\Xi\xisetclientpointer.c" />
+    <ClCompile Include="..\Xi\xisetdevfocus.c" />
+    <ClCompile Include="..\Xi\xiwarppointer.c" />
+    <ClCompile Include="..\xkb\ddxBeep.c" />
+    <ClCompile Include="..\xkb\ddxCtrls.c" />
+    <ClCompile Include="..\xkb\ddxKillSrv.c" />
+    <ClCompile Include="..\xkb\ddxLEDs.c" />
+    <ClCompile Include="..\xkb\ddxList.c" />
+    <ClCompile Include="..\xkb\ddxLoad.c" />
+    <ClCompile Include="..\xkb\ddxPrivate.c" />
+    <ClCompile Include="..\xkb\ddxVT.c" />
+    <ClCompile Include="..\xkb\maprules.c" />
+    <ClCompile Include="..\xkb\xkb.c" />
+    <ClCompile Include="..\xkb\xkbAccessX.c" />
+    <ClCompile Include="..\xkb\xkbActions.c" />
+    <ClCompile Include="..\xkb\XKBAlloc.c" />
+    <ClCompile Include="..\xkb\xkbEvents.c" />
+    <ClCompile Include="..\xkb\xkbfmisc.c" />
+    <ClCompile Include="..\xkb\XKBGAlloc.c" />
+    <ClCompile Include="..\xkb\xkbInit.c" />
+    <ClCompile Include="..\xkb\xkbLEDs.c" />
+    <ClCompile Include="..\xkb\XKBMAlloc.c" />
+    <ClCompile Include="..\xkb\XKBMisc.c" />
+    <ClCompile Include="..\xkb\xkbout.c" />
+    <ClCompile Include="..\xkb\xkbPrKeyEv.c" />
+    <ClCompile Include="..\xkb\xkbSwap.c" />
+    <ClCompile Include="..\xkb\xkbtext.c" />
+    <ClCompile Include="..\xkb\xkbUtils.c" />
+    <ClCompile Include="..\xkb\xkmread.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\dbe\dbestruct.h" />
+    <ClInclude Include="..\dbe\midbe.h" />
+    <ClInclude Include="..\dbe\midbestr.h" />
+    <ClInclude Include="..\dix\dispatch.h" />
+    <ClInclude Include="..\dix\enterleave.h" />
+    <ClInclude Include="..\fb\fb.h" />
+    <ClInclude Include="..\fb\fb24_32.h" />
+    <ClInclude Include="..\fb\fbbits.h" />
+    <ClInclude Include="..\fb\fboverlay.h" />
+    <ClInclude Include="..\fb\fbpict.h" />
+    <ClInclude Include="..\fb\fbrop.h" />
+    <ClInclude Include="..\fb\wfbrename.h" />
+    <ClInclude Include="..\hw\kdrive\src\fourcc.h" />
+    <ClInclude Include="..\hw\kdrive\src\kdrive.h" />
+    <ClInclude Include="..\hw\kdrive\src\kxv.h" />
+    <ClInclude Include="..\lib\libXfont-1.4.6\src\bitmap\snfstr.h" />
+    <ClInclude Include="..\lib\libXfont-1.4.6\src\builtins\builtin.h" />
+    <ClInclude Include="..\lib\libXfont-1.4.6\src\fc\fserve.h" />
+    <ClInclude Include="..\lib\libXfont-1.4.6\src\fc\fservestr.h" />
+    <ClInclude Include="..\lib\libXfont-1.4.6\src\fc\fsio.h" />
+    <ClInclude Include="..\lib\libXfont-1.4.6\src\fc\fslibos.h" />
+    <ClInclude Include="..\miext\damage\damage.h" />
+    <ClInclude Include="..\miext\damage\damagestr.h" />
+    <ClInclude Include="..\miext\shadow\shadow.h" />
+    <ClInclude Include="..\miext\shadow\shrotpack.h" />
+    <ClInclude Include="..\miext\shadow\shrotpackYX.h" />
+    <ClInclude Include="..\mi\mi.h" />
+    <ClInclude Include="..\mi\mibstore.h" />
+    <ClInclude Include="..\mi\micmap.h" />
+    <ClInclude Include="..\mi\micoord.h" />
+    <ClInclude Include="..\mi\mifillarc.h" />
+    <ClInclude Include="..\mi\mifpoly.h" />
+    <ClInclude Include="..\mi\migc.h" />
+    <ClInclude Include="..\mi\miline.h" />
+    <ClInclude Include="..\mi\mioverlay.h" />
+    <ClInclude Include="..\mi\mipointer.h" />
+    <ClInclude Include="..\mi\mipointrst.h" />
+    <ClInclude Include="..\mi\mipoly.h" />
+    <ClInclude Include="..\mi\miscanfill.h" />
+    <ClInclude Include="..\mi\mispans.h" />
+    <ClInclude Include="..\mi\misprite.h" />
+    <ClInclude Include="..\mi\mistruct.h" />
+    <ClInclude Include="..\mi\mivalidate.h" />
+    <ClInclude Include="..\mi\miwideline.h" />
+    <ClInclude Include="..\mi\mizerarc.h" />
+    <ClInclude Include="..\pixman\loongson-mmintrin.h" />
+    <ClInclude Include="..\pixman\pixman-accessor.h" />
+    <ClInclude Include="..\pixman\pixman-combine32.h" />
+    <ClInclude Include="..\pixman\pixman-compiler.h" />
+    <ClInclude Include="..\pixman\pixman-edge-imp.h" />
+    <ClInclude Include="..\pixman\pixman-inlines.h" />
+    <ClInclude Include="..\pixman\pixman-private.h" />
+    <ClInclude Include="..\pixman\pixman-version.h" />
+    <ClInclude Include="..\pixman\pixman.h" />
+    <ClInclude Include="..\randr\randrstr.h" />
+    <ClInclude Include="..\randr\rrtransform.h" />
+    <ClInclude Include="..\render\glyphstr.h" />
+    <ClInclude Include="..\render\mipict.h" />
+    <ClInclude Include="..\render\picture.h" />
+    <ClInclude Include="..\render\picturestr.h" />
+    <ClInclude Include="..\sys_include\X11\Xtrans\Xtrans.h" />
+    <ClInclude Include="..\sys_include\X11\Xtrans\Xtransint.h" />
+    <ClInclude Include="..\xfixes\xfixes.h" />
+    <ClInclude Include="..\xfixes\xfixesint.h" />
+    <ClInclude Include="..\Xi\allowev.h" />
+    <ClInclude Include="..\Xi\chgdctl.h" />
+    <ClInclude Include="..\Xi\chgfctl.h" />
+    <ClInclude Include="..\Xi\chgkbd.h" />
+    <ClInclude Include="..\Xi\chgkmap.h" />
+    <ClInclude Include="..\Xi\chgprop.h" />
+    <ClInclude Include="..\Xi\chgptr.h" />
+    <ClInclude Include="..\Xi\closedev.h" />
+    <ClInclude Include="..\Xi\devbell.h" />
+    <ClInclude Include="..\Xi\exglobals.h" />
+    <ClInclude Include="..\Xi\getbmap.h" />
+    <ClInclude Include="..\Xi\getdctl.h" />
+    <ClInclude Include="..\Xi\getfctl.h" />
+    <ClInclude Include="..\Xi\getfocus.h" />
+    <ClInclude Include="..\Xi\getkmap.h" />
+    <ClInclude Include="..\Xi\getmmap.h" />
+    <ClInclude Include="..\Xi\getprop.h" />
+    <ClInclude Include="..\Xi\getselev.h" />
+    <ClInclude Include="..\Xi\getvers.h" />
+    <ClInclude Include="..\Xi\grabdev.h" />
+    <ClInclude Include="..\Xi\grabdevb.h" />
+    <ClInclude Include="..\Xi\grabdevk.h" />
+    <ClInclude Include="..\Xi\gtmotion.h" />
+    <ClInclude Include="..\Xi\listdev.h" />
+    <ClInclude Include="..\Xi\opendev.h" />
+    <ClInclude Include="..\Xi\queryst.h" />
+    <ClInclude Include="..\Xi\selectev.h" />
+    <ClInclude Include="..\Xi\sendexev.h" />
+    <ClInclude Include="..\Xi\setbmap.h" />
+    <ClInclude Include="..\Xi\setdval.h" />
+    <ClInclude Include="..\Xi\setfocus.h" />
+    <ClInclude Include="..\Xi\setmmap.h" />
+    <ClInclude Include="..\Xi\setmode.h" />
+    <ClInclude Include="..\Xi\ungrdev.h" />
+    <ClInclude Include="..\Xi\ungrdevb.h" />
+    <ClInclude Include="..\Xi\ungrdevk.h" />
+    <ClInclude Include="..\Xi\xiallowev.h" />
+    <ClInclude Include="..\Xi\xichangecursor.h" />
+    <ClInclude Include="..\Xi\xichangehierarchy.h" />
+    <ClInclude Include="..\Xi\xigetclientpointer.h" />
+    <ClInclude Include="..\Xi\xigrabdev.h" />
+    <ClInclude Include="..\Xi\xipassivegrab.h" />
+    <ClInclude Include="..\Xi\xiproperty.h" />
+    <ClInclude Include="..\Xi\xiquerydevice.h" />
+    <ClInclude Include="..\Xi\xiquerypointer.h" />
+    <ClInclude Include="..\Xi\xiqueryversion.h" />
+    <ClInclude Include="..\Xi\xiselectev.h" />
+    <ClInclude Include="..\Xi\xisetclientpointer.h" />
+    <ClInclude Include="..\Xi\xisetdevfocus.h" />
+    <ClInclude Include="..\Xi\xiwarppointer.h" />
+    <ClInclude Include="..\xkb\xkb-config.h" />
+    <ClInclude Include="..\xkb\xkb.h" />
+    <ClInclude Include="..\xkb\xkbDflts.h" />
+    <ClInclude Include="..\xkb\xkbgeom.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\dix\buildatoms" />
+    <None Include="..\dix\BuiltInAtoms" />
+    <None Include="..\dix\Makefile.am" />
+    <None Include="..\dix\Xserver-dtrace.h.in" />
+    <None Include="..\dix\Xserver.d" />
+    <None Include="..\fb\Makefile.am" />
+    <None Include="..\hw\kdrive\src\Makefile.am" />
+    <None Include="..\lib\libXfont-1.4.6\src\bitmap\Makefile.am" />
+    <None Include="..\lib\libXfont-1.4.6\src\fontfile\Makefile.am" />
+    <None Include="..\lib\libXfont-1.4.6\src\util\Makefile.am" />
+    <None Include="..\render\Makefile.am" />
+    <None Include="..\Xi\Makefile.am" />
+    <None Include="..\xkb\Makefile.am" />
+    <None Include="..\xkb\README.compiled" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\dix\protocol.txt" />
+    <Text Include="..\xkb\XKM_file_format.txt" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCTargetsPath Condition="'$(DesignTimeBuild)'!='true' AND $(Configuration.Contains('Wasm'))">./</VCTargetsPath>
+    <MSBuildProjectExtensionsPath Condition="'$(DesignTimeBuild)'!='true' AND $(Configuration.Contains('Wasm'))">./</MSBuildProjectExtensionsPath>
+    <GCCBuild_UseWSL>false</GCCBuild_UseWSL>
+    <GCCToolCompilerStyle Condition="$(Configuration.Contains('Wasm'))">llvm</GCCToolCompilerStyle>
+    <VCTargetsPath Condition="'$(DesignTimeBuild)'!='true' AND $(Configuration.Contains('GCC'))">./</VCTargetsPath>
+    <MSBuildProjectExtensionsPath Condition="'$(DesignTimeBuild)'!='true' AND $(Configuration.Contains('GCC'))">./</MSBuildProjectExtensionsPath>
+    <VCTargetsPath Condition="'$(DesignTimeBuild)'!='true' AND $(Configuration.Contains('Linux'))">./</VCTargetsPath>
+    <MSBuildProjectExtensionsPath Condition="'$(DesignTimeBuild)'!='true' AND $(Configuration.Contains('Linux'))">./</MSBuildProjectExtensionsPath>
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{CC727801-8297-4AC9-8A13-A9035AF40908}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>winxsdl</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)$(Configuration)\Obj\</IntDir>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WasmDebug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" Condition="'$(VCTargetsPath)' != '.' AND '$(VCTargetsPath)' != '.\' AND '$(VCTargetsPath)' != './'" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='WasmDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>d:\projects\SDL-1.2.15\;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WasmDebug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>d:\projects\SDL-1.2.15\;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>X_GZIP_FONT_COMPRESSION;CUSTOMSOCKET;DEBUG_COMMUNICATION;TCPCONN;XTRANSDEBUG=5;XFIXES;HAVE_CONFIG_H;HAVE_CBRT;TRANS_SERVER;SHAPE;GETLEFTBITS_ALIGNMENT=1;GLYPHPADBYTES=4;NO_ALLOCA;_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\xi;$(SolutionDir)..\pixman;$(SolutionDir)..\sys_include;$(SolutionDir)..\sys_include_win;$(SolutionDir)..\include;$(SolutionDir)..\mi;$(SolutionDir)..\render;$(SolutionDir)..\miext\damage\;$(SolutionDir)..\fb;$(SolutionDir)..\miext\shadow;$(SolutionDir)..\Xext;d:\Projects\SDL-1.2.15\;$(SolutionDir)..\randr;d:\Projects\vcpkg\packages\zlib_x86-windows\include\;$(SolutionDir)..\xkb</AdditionalIncludeDirectories>
+      <ShowIncludes>true</ShowIncludes>
+      <AdditionalOptions>/wd4146</AdditionalOptions>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>d:\Projects\SDL-1.2.15\lib\x86\;d:\Projects\vcpkg\packages\zlib_x86-windows\lib\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>zlib.lib;sdl.lib;Ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>sdl.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>d:\projects\SDL-1.2.15\lib\x86\</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='WasmDebug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>DEBUG_COMMUNICATION;CUSTOMSOCKET;TCPCONN;__EMSCRIPTEN__;NO_LOCAL_CLIENT_CRED;PIXMAN_NO_TLS;_GNU_SOURCE;X_GZIP_FONT_COMPRESSION;XFIXES;HAVE_CONFIG_H;HAVE_CBRT;SHAPE;GETLEFTBITS_ALIGNMENT=1;GLYPHPADBYTES=4;NO_ALLOCA;_DEBUG;_CONSOLE;IMAGE_BYTE_ORDER=MSBFirst;BITMAP_BIT_ORDER=MSBFirst;XTRANSDEBUG=5;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\xi;$(SolutionDir)..\pixman;$(SolutionDir)..\sys_include;$(SolutionDir)..\include;$(SolutionDir)..\mi;$(SolutionDir)..\render;$(SolutionDir)..\miext\damage\;$(SolutionDir)..\fb;$(SolutionDir)..\miext\shadow;$(SolutionDir)..\Xext;$(SolutionDir)..\randr;$(SolutionDir)..\xkb</AdditionalIncludeDirectories>
+      <ShowIncludes>false</ShowIncludes>
+      <AdditionalOptions>-s USE_ZLIB=1 -s USE_SDL=1</AdditionalOptions>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" Condition="'$(VCTargetsPath)' != '.' AND '$(VCTargetsPath)' != '.\' AND '$(VCTargetsPath)' != './'" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

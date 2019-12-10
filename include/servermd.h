@@ -352,4 +352,10 @@ extern _X_EXPORT PaddingInfo PixmapWidthPaddingInfo[];
 #define PixmapBytePadProto(w, d) PixmapBytePad(w, d)
 #define BitmapBytePadProto(w) BitmapBytePad(w)
 
+#ifdef WIN32
+#define IMAGE_BYTE_ORDER	LSBFirst
+#define BITMAP_BIT_ORDER	LSBFirst
+#define GLYPHPADBYTES		4
+#endif
+
 #endif /* SERVERMD_H */

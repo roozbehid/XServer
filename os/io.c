@@ -57,7 +57,7 @@ SOFTWARE.
 #include <dix-config.h>
 #endif
 
-#undef DEBUG_COMMUNICATION
+////#undef DEBUG_COMMUNICATION
 
 #ifdef WIN32
 #include <X11/Xwinsock.h>
@@ -351,6 +351,13 @@ ReadRequestFromClient(ClientPtr client)
 				     oci->size - oci->bufcnt); 
 	if (result <= 0)
 	{
+		//Rooz
+		YieldControlNoInput(fd);
+		return 0;
+		//ROOZ
+
+
+
 	    if ((result < 0) && ETEST(errno))
 	    {
 #if defined(SVR4) && defined(__i386__) && !defined(sun)

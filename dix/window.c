@@ -219,7 +219,7 @@ get_window_name(WindowPtr pWin)
 static void log_window_info(WindowPtr pWin, int depth)
 {
     int i;
-    const char *win_name, *visibility;
+    const char *win_name, *visibility=NULL;
     BoxPtr rects;
     ScreenPtr pScreen = pWin->drawable.pScreen;
 
@@ -912,6 +912,9 @@ DisposeWindowOptional (WindowPtr pWin)
     free(pWin->optional);
     pWin->optional = NULL;
 }
+
+extern void
+DeleteWindowFromAnySelections(WindowPtr pWin);
 
 static void
 FreeWindowResources(WindowPtr pWin)

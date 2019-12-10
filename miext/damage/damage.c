@@ -24,6 +24,7 @@
 #include <dix-config.h>
 #endif
 
+#include <stdio.h>
 #include <stdlib.h>
 
 #include    <X11/X.h>
@@ -1279,6 +1280,7 @@ damagePolyFillRect(DrawablePtr	pDrawable,
 		   int		nRects,
 		   xRectangle	*pRects)
 {
+	//printf("damagePolyFillRect\n");
     DAMAGE_GC_OP_PROLOGUE(pGC, pDrawable);
     if (nRects && checkGCDamage (pDrawable, pGC))
     {

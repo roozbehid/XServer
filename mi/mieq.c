@@ -176,7 +176,7 @@ mieqEnqueue(DeviceIntPtr pDev, InternalEvent *e)
             if (!stuck) {
                 ErrorF("[mi] EQ overflowing. The server is probably stuck "
                         "in an infinite loop.\n");
-                xorg_backtrace();
+                ////xorg_backtrace();
                 stuck = 1;
             }
 #ifdef XQUARTZ

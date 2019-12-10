@@ -138,6 +138,8 @@ DeleteClientFromAnySelections(ClientPtr client)
 	    pSel->client = NullClient;
 	}
 }
+extern Bool
+dix_ValidAtom(Atom atom);
 
 int
 ProcSetSelectionOwner(ClientPtr client)
@@ -163,7 +165,7 @@ ProcSetSelectionOwner(ClientPtr client)
         if (rc != Success)
             return rc;
     }
-    if (!ValidAtom(stuff->selection)) {
+    if (!dix_ValidAtom(stuff->selection)) {
 	client->errorValue = stuff->selection;
         return BadAtom;
     }
@@ -235,7 +237,7 @@ ProcGetSelectionOwner(ClientPtr client)
     REQUEST(xResourceReq);
     REQUEST_SIZE_MATCH(xResourceReq);
 
-    if (!ValidAtom(stuff->id)) {
+    if (!dix_ValidAtom(stuff->id)) {
 	client->errorValue = stuff->id;
         return BadAtom;
     }
@@ -273,8 +275,8 @@ ProcConvertSelection(ClientPtr client)
     if (rc != Success)
         return rc;
 
-    paramsOkay = ValidAtom(stuff->selection) && ValidAtom(stuff->target);
-    paramsOkay &= (stuff->property == None) || ValidAtom(stuff->property);
+    paramsOkay = dix_ValidAtom(stuff->selection) && dix_ValidAtom(stuff->target);
+    paramsOkay &= (stuff->property == None) || dix_ValidAtom(stuff->property);
     if (!paramsOkay) {
 	client->errorValue = stuff->property;
         return BadAtom;

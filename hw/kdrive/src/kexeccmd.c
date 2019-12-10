@@ -14,7 +14,7 @@ static void *child_command(void *unused)
 	FILE *cmd;
 	char buf[512];
 	sprintf (buf, ":%s", display);
-	printf ("setenv DISPLAY=%s", buf);
+	/*printf ("setenv DISPLAY=%s", buf);
 	setenv ("DISPLAY", buf, 1);
 	setenv ("PULSE_SERVER", "tcp:127.0.0.1:4712", 1);
 	printf ("Starting child command: %s", kdExecuteCommand);
@@ -26,14 +26,14 @@ static void *child_command(void *unused)
 	while (fgets (buf, sizeof(buf), cmd)) {
 		printf ("> %s", buf);
 	}
-	printf ("Child command returned with status %d", pclose (cmd));
+	printf ("Child command returned with status %d", pclose (cmd));*/
 	return NULL;
 }
 
 void KdExecuteChildCommand()
 {
 	pthread_t thread_id;
-	if (!kdExecuteCommand)
+	/*if (!kdExecuteCommand)
 		return;
-	pthread_create(&thread_id, NULL, &child_command, NULL);
+	pthread_create(&thread_id, NULL, &child_command, NULL);*/
 }

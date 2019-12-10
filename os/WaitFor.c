@@ -75,6 +75,10 @@ SOFTWARE.
 #include "dpmsproc.h"
 #endif
 
+#ifdef CUSTOMSOCKET
+#include "../pipesocket/pipesocket.h"
+#endif
+
 #ifdef WIN32
 /* Error codes from windows sockets differ from fileio error codes  */
 #undef EINTR
@@ -90,6 +94,10 @@ SOFTWARE.
 /* This is just a fallback to errno to hide the differences between unix and
    Windows in the code */
 #define GetErrno() errno
+#endif
+
+#if CUSTOMSOCKET
+#define GetErrno WSAGetLastError
 #endif
 
 /* like ffs, but uses fd_mask instead of int as argument, so it works
@@ -232,6 +240,7 @@ WaitForSomething(int *pClientsReady)
 	    i = Select (MaxClients, &LastSelectMask, NULL, NULL, wt);
 	}
 	selecterr = GetErrno();
+	////printf("WaitForSomething loop selecterr:%d\n", selecterr);
 	WakeupHandler(i, (pointer)&LastSelectMask);
 	if (i <= 0) /* An error or timeout occurred */
 	{
@@ -315,7 +324,7 @@ WaitForSomething(int *pClientsReady)
 	    XFD_ANDSET(&devicesReadable, &LastSelectMask, &EnabledDevices);
 	    XFD_ANDSET(&clientsReadable, &LastSelectMask, &AllClients); 
 	    XFD_ANDSET(&tmp_set, &LastSelectMask, &WellKnownConnections);
-	    if (XFD_ANYSET(&tmp_set))
+		if (XFD_ANYSET(&tmp_set))
 		QueueWorkProc(EstablishNewConnections, NULL,
 			      (pointer)&LastSelectMask);
 

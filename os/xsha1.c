@@ -127,7 +127,22 @@ int x_sha1_final(void *ctx, unsigned char result[20])
     return 1;
 }
 
-#else /* Use OpenSSL's libcrypto */
+#elif defined(WIN32) /* Use OpenSSL's libcrypto */
+void *x_sha1_init(void)
+{
+
+}
+
+int x_sha1_update(void *ctx, void *data, int size)
+{
+
+}
+
+int x_sha1_final(void *ctx, unsigned char result[20])
+{
+}
+
+#elif defined(USE_OPENSSL)
 
 # include <stddef.h>  /* buggy openssl/sha.h wants size_t */
 # include <openssl/sha.h>
@@ -163,6 +178,20 @@ int x_sha1_final(void *ctx, unsigned char result[20])
     ret = SHA1_Final(result, sha_ctx);
     free(sha_ctx);
     return ret;
+}
+#else
+void* x_sha1_init(void)
+{
+
+}
+
+int x_sha1_update(void* ctx, void* data, int size)
+{
+
+}
+
+int x_sha1_final(void* ctx, unsigned char result[20])
+{
 }
 
 #endif

@@ -131,7 +131,7 @@ int dix_main(int argc, char *argv[], char *envp[])
 #elif defined(__ANDROID__)
 int android_main(int argc, char *argv[], char *envp[])
 #else
-int main(int argc, char *argv[], char *envp[])
+int Xmain(int argc, char *argv[], char *envp[])
 #endif
 {
     int		i;

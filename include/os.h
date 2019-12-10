@@ -52,6 +52,12 @@ SOFTWARE.
 #include "misc.h"
 #include <stdarg.h>
 #include <string.h>
+#include <assert.h>
+
+typedef int     pid_t;
+#ifdef WIN32
+	#define strncasecmp(x,y,z) _strnicmp(x,y,z)
+#endif
 
 #define SCREEN_SAVER_ON   0
 #define SCREEN_SAVER_OFF  1
@@ -542,6 +548,6 @@ extern _X_EXPORT void ErrorF(const char *f, ...) _X_ATTRIBUTE_PRINTF(1,2);
 extern _X_EXPORT void Error(const char *str);
 extern _X_EXPORT void LogPrintMarkers(void);
 
-extern _X_EXPORT void xorg_backtrace(void);
+////extern _X_EXPORT void xorg_backtrace(void);
 
 #endif /* OS_H */

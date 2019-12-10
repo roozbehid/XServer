@@ -126,7 +126,7 @@ OsSigHandler(int signo)
   }
 
   /* log, cleanup, and abort */
-  xorg_backtrace();
+  ////xorg_backtrace();
 
 #ifdef SA_SIGINFO
   if (sip->si_code == SI_USER) {
@@ -147,6 +147,14 @@ OsSigHandler(int signo)
 	     signo, strsignal(signo));
 }
 
+#define	SIGQUIT	3	/* quit */
+#define	SIGBUS	10	/* bus error */
+#define	SIGSYS	12	/* bad argument to system call */
+#define	SIGPIPE	13	/* write on a pipe with no one to read it */
+#define	SIGALRM	14	/* alarm clock */
+#define	SIGXCPU	24	/* exceeded CPU time limit */
+#define	SIGXFSZ	25	/* exceeded file size limit */
+
 void
 OsInit(void)
 {
@@ -155,7 +163,10 @@ OsInit(void)
     char fname[PATH_MAX];
 
     if (!been_here) {
-	struct sigaction act, oact;
+#ifndef WIN32
+		struct sigaction act, oact;
+#endif
+
 	int i;
 	int siglist[] = { SIGSEGV, SIGQUIT, SIGILL, SIGFPE, SIGBUS,
 			  SIGSYS,
@@ -165,15 +176,19 @@ OsInit(void)
 			  SIGEMT,
 #endif
 			  0 /* must be last */ };
+#ifndef WIN32
 	sigemptyset(&act.sa_mask);
+#endif
 #ifdef SA_SIGINFO
 	act.sa_sigaction = OsSigHandler;
 	act.sa_flags = SA_SIGINFO;
 #else
+#ifndef WIN32
         act.sa_handler = OsSigHandler;
         act.sa_flags = 0;
 #endif
-#ifndef __ANDROID__ /* No signal handling on Android, let it crash and print backtrace */
+#endif
+#if !defined(__ANDROID__ ) && !defined(WIN32)/* No signal handling on Android, let it crash and print backtrace */
 	for (i = 0; siglist[i] != 0; i++) {
 	    if (sigaction(siglist[i], &act, &oact)) {
 		ErrorF("failed to install signal handler for signal %d: %s\n",
@@ -202,8 +217,8 @@ OsInit(void)
 #endif
 
 #if !defined(__CYGWIN__) 
-	fclose(stdin);
-	fclose(stdout);
+	////fclose(stdin);
+	////fclose(stdout);
 #endif
 	/* 
 	 * If a write of zero bytes to stderr returns non-zero, i.e. -1, 
@@ -225,8 +240,8 @@ OsInit(void)
 	     */
 	    if (!(err = fopen (fname, "a+")))
 		err = fopen (devnull, "w");
-	    if (err && (fileno(err) != 2)) {
-		dup2 (fileno (err), 2);
+	    if (err && (_fileno(err) != 2)) {
+		dup2 (_fileno (err), 2);
 		fclose (err);
 	    }
 #if defined(SYSV) || defined(SVR4) || defined(WIN32) || defined(__CYGWIN__)
@@ -239,8 +254,10 @@ OsInit(void)
 #endif
 	}
 
+#ifndef WIN32
 	if (getpgrp () == 0)
 	    setpgid (0, 0);
+#endif
 
 #ifdef RLIMIT_DATA
 	if (limitDataSpace >= 0)

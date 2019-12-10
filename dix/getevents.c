@@ -1140,7 +1140,7 @@ GetPointerEvents(InternalEvent *events, DeviceIntPtr pDev, int type, int buttons
     int num_events = 1;
     CARD32 ms;
     DeviceEvent *event;
-    RawDeviceEvent    *raw;
+    RawDeviceEvent    *raw=NULL;
     int x = 0, y = 0, /* device coords */
         cx, cy; /* only screen coordinates */
     float x_frac = 0.0, y_frac = 0.0, cx_frac, cy_frac;

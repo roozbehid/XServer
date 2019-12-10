@@ -158,7 +158,7 @@ RRScreenSizeNotify (ScreenPtr	pScreen)
     /*
      * Fix pointer bounds and location
      */
-    ScreenRestructured (pScreen);
+    //////ScreenRestructured (pScreen);
 }
 
 /*

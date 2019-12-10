@@ -1,0 +1,1507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="dbe">
+      <UniqueIdentifier>{86dbdcc0-41cb-468d-97e5-34cac8f09efc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dix">
+      <UniqueIdentifier>{7b2c0300-31d4-4a91-8e7e-d1aa1068732f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fb">
+      <UniqueIdentifier>{f57ad1b8-080a-4b82-9b43-e91eca0f3c56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{5d4dccb2-cac6-4f2e-82d6-53cee4e6d8d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mi">
+      <UniqueIdentifier>{326f74a4-cacb-4ea4-a65d-4b913115db21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="miext">
+      <UniqueIdentifier>{6cbadf8c-a5c6-4f0d-9fb2-e85dc9ed6fd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="os">
+      <UniqueIdentifier>{65513b59-829a-48bf-8215-d16660aec8f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="randr">
+      <UniqueIdentifier>{f7996579-adbb-46d5-8e7c-8e6c5bbaa32b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="render">
+      <UniqueIdentifier>{f05f0807-048c-45b5-872a-4e97cf0f6f1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xext">
+      <UniqueIdentifier>{31de3a75-42c1-4e44-8167-0ed4f08d1d91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xfixes">
+      <UniqueIdentifier>{15aadeb6-7295-437c-a868-18e886ed46e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hw">
+      <UniqueIdentifier>{b45b077d-c0f4-47d3-9a98-b91dc6c3a0fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hw\kdrive">
+      <UniqueIdentifier>{18caeca6-f97b-4d59-875f-285afbcdd51c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hw\kdrive\sdl">
+      <UniqueIdentifier>{a1e9d4dc-1171-4b04-b4f0-9e6cbf49fffc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hw\kdrive\src">
+      <UniqueIdentifier>{9944c07b-bcb1-416c-a49e-49d52e6a0e54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="miext\shadow">
+      <UniqueIdentifier>{fbda621e-8961-4a58-a8f3-07457d215680}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pixman">
+      <UniqueIdentifier>{dbe97c50-f109-4e2c-a70b-561c1b68e8ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xi">
+      <UniqueIdentifier>{23371196-d926-461a-b675-8b761854427f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="miext\Damage">
+      <UniqueIdentifier>{53cf8f7a-7391-4c97-88f8-683f8cb3992f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\trans">
+      <UniqueIdentifier>{d80e51e7-306c-4ac2-ac2f-bbcccb5d2da6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xkb">
+      <UniqueIdentifier>{70f571fe-3474-4a3a-8807-ccb5b208ecc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\fonts">
+      <UniqueIdentifier>{4bd15eb2-f045-43be-831d-bbd59bc109bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\fonts\bitmap">
+      <UniqueIdentifier>{b766ace8-a300-4da5-852a-f88ec78e6ecb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\fonts\fc">
+      <UniqueIdentifier>{52009e55-31ca-4dec-a2c1-cbb0886ae9a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\fonts\fontfile">
+      <UniqueIdentifier>{6914f5f4-09e8-4f22-8828-3134c8d23acb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\fonts\util">
+      <UniqueIdentifier>{e5c51725-4b87-4f64-a58d-74e16828ba1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\fonts\builtins">
+      <UniqueIdentifier>{c049cb0d-b50d-4e11-9a0b-ddaf0fd6473d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\Xau">
+      <UniqueIdentifier>{ac009045-b1e9-425c-b17b-3586e11920d5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\dbe\dbe.c">
+      <Filter>dbe</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dbe\midbe.c">
+      <Filter>dbe</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\atom.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\colormap.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\cursor.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\devices.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\dispatch.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\dixfonts.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\dixutils.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\enterleave.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\eventconvert.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\events.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\extension.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\ffs.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\gc.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\getevents.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\globals.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\glyphcurs.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\grabs.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\inpututils.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\main.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\pixmap.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\privates.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\property.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\ptrveloc.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\region.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\registry.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\resource.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\selection.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\swaprep.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\swapreq.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\tables.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\window.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fb24_32.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fballpriv.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbarc.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbbits.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbblt.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbbltone.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbcmap_mi.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbcopy.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbfill.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbfillrect.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbfillsp.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbgc.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbgetsp.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbglyph.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbimage.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbline.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fboverlay.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbpict.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbpixmap.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbpoint.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbpush.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbscreen.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbseg.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbsetsp.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbsolid.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbstipple.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbtile.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbtrap.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbutil.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fb\fbwindow.c">
+      <Filter>fb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hw\kdrive\src\kcmap.c">
+      <Filter>hw\kdrive\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hw\kdrive\src\kdrive.c">
+      <Filter>hw\kdrive\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hw\kdrive\src\kexeccmd.c">
+      <Filter>hw\kdrive\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hw\kdrive\src\kinfo.c">
+      <Filter>hw\kdrive\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hw\kdrive\src\kinput.c">
+      <Filter>hw\kdrive\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hw\kdrive\src\kmode.c">
+      <Filter>hw\kdrive\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hw\kdrive\src\kshadow.c">
+      <Filter>hw\kdrive\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hw\kdrive\sdl\sdl.c">
+      <Filter>hw\kdrive\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\miarc.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mibitblt.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mibstore.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\micmap.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\micopy.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\micursor.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\midash.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\midispcur.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mieq.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\miexpose.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mifillarc.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mifillrct.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mifpolycon.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\migc.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\miglblt.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\miinitext.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mioverlay.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mipointer.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mipoly.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mipolycon.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mipolygen.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mipolypnt.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mipolyrect.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mipolyseg.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mipolytext.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mipolyutil.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mipushpxl.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\miscrinit.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mispans.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\misprite.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mivaltree.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\miwideline.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\miwindow.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mizerarc.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mizerclip.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mi\mizerline.c">
+      <Filter>mi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\render\animcur.c">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\render\filter.c">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\render\glyph.c">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\render\matrix.c">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\render\miindex.c">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\render\mipict.c">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\render\mirect.c">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\render\mitrap.c">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\render\mitri.c">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\render\picture.c">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\render\render.c">
+      <Filter>render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\randr\randr.c">
+      <Filter>randr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\randr\rrcrtc.c">
+      <Filter>randr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\randr\rrdispatch.c">
+      <Filter>randr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\randr\rrinfo.c">
+      <Filter>randr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\randr\rrmode.c">
+      <Filter>randr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\randr\rroutput.c">
+      <Filter>randr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\randr\rrpointer.c">
+      <Filter>randr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\randr\rrproperty.c">
+      <Filter>randr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\randr\rrscreen.c">
+      <Filter>randr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\randr\rrsdispatch.c">
+      <Filter>randr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\randr\rrtransform.c">
+      <Filter>randr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\shadow\shadow.c">
+      <Filter>miext\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\shadow\shalloc.c">
+      <Filter>miext\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\shadow\shpacked.c">
+      <Filter>miext\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\shadow\shplanar.c">
+      <Filter>miext\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\shadow\shplanar8.c">
+      <Filter>miext\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\shadow\shrot8pack.c">
+      <Filter>miext\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\shadow\shrot8pack_90.c">
+      <Filter>miext\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\shadow\shrot8pack_180.c">
+      <Filter>miext\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\shadow\shrot8pack_270.c">
+      <Filter>miext\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\shadow\shrot16pack.c">
+      <Filter>miext\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\shadow\shrot16pack_90.c">
+      <Filter>miext\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\shadow\shrot16pack_90YX.c">
+      <Filter>miext\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\shadow\shrot16pack_180.c">
+      <Filter>miext\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\shadow\shrot16pack_270.c">
+      <Filter>miext\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\shadow\shrot16pack_270YX.c">
+      <Filter>miext\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\shadow\shrot32pack.c">
+      <Filter>miext\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\shadow\shrot32pack_90.c">
+      <Filter>miext\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\shadow\shrot32pack_180.c">
+      <Filter>miext\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\shadow\shrot32pack_270.c">
+      <Filter>miext\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\shadow\shrotate.c">
+      <Filter>miext\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\os\access.c">
+      <Filter>os</Filter>
+    </ClCompile>
+    <ClCompile Include="..\os\auth.c">
+      <Filter>os</Filter>
+    </ClCompile>
+    <ClCompile Include="..\os\connection.c">
+      <Filter>os</Filter>
+    </ClCompile>
+    <ClCompile Include="..\os\io.c">
+      <Filter>os</Filter>
+    </ClCompile>
+    <ClCompile Include="..\os\log.c">
+      <Filter>os</Filter>
+    </ClCompile>
+    <ClCompile Include="..\os\mitauth.c">
+      <Filter>os</Filter>
+    </ClCompile>
+    <ClCompile Include="..\os\oscolor.c">
+      <Filter>os</Filter>
+    </ClCompile>
+    <ClCompile Include="..\os\osinit.c">
+      <Filter>os</Filter>
+    </ClCompile>
+    <ClCompile Include="..\os\utils.c">
+      <Filter>os</Filter>
+    </ClCompile>
+    <ClCompile Include="..\os\WaitFor.c">
+      <Filter>os</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-access.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-access-accessors.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-bits-image.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-combine32.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-combine-float.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-conical-gradient.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-edge.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-edge-accessors.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-fast-path.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-filter.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-general.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-glyph.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-gradient-walker.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-image.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-implementation.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-linear-gradient.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-matrix.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-mmx.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-noop.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-ppc.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-radial-gradient.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-region16.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-region32.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-solid-fill.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-timer.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-trap.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pixman\pixman-utils.c">
+      <Filter>pixman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\allowev.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\chgdctl.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\chgfctl.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\chgkbd.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\chgkmap.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\chgprop.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\chgptr.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\closedev.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\devbell.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\exevents.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\extinit.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\getbmap.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\getdctl.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\getfctl.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\getfocus.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\getkmap.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\getmmap.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\getprop.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\getselev.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\getvers.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\grabdev.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\grabdevb.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\grabdevk.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\gtmotion.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\listdev.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\opendev.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\queryst.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\selectev.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\sendexev.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\setbmap.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\setdval.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\setfocus.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\setmmap.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\setmode.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\ungrdev.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\ungrdevb.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\ungrdevk.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\xiallowev.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\xichangecursor.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\xichangehierarchy.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\xigetclientpointer.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\xigrabdev.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\xipassivegrab.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\xiproperty.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\xiquerydevice.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\xiquerypointer.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\xiqueryversion.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\xiselectev.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\xisetclientpointer.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\xisetdevfocus.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xi\xiwarppointer.c">
+      <Filter>xi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\miext\damage\damage.c">
+      <Filter>miext\Damage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\os\strcasecmp.c">
+      <Filter>os</Filter>
+    </ClCompile>
+    <ClCompile Include="..\os\strcasestr.c">
+      <Filter>os</Filter>
+    </ClCompile>
+    <ClCompile Include="..\os\strlcat.c">
+      <Filter>os</Filter>
+    </ClCompile>
+    <ClCompile Include="..\os\strlcpy.c">
+      <Filter>os</Filter>
+    </ClCompile>
+    <ClCompile Include="..\os\xsha1.c">
+      <Filter>os</Filter>
+    </ClCompile>
+    <ClCompile Include="..\os\xprintf.c">
+      <Filter>os</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\util\atom.c">
+      <Filter>lib\fonts\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\util\fontaccel.c">
+      <Filter>lib\fonts\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\util\fontnames.c">
+      <Filter>lib\fonts\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\util\fontutil.c">
+      <Filter>lib\fonts\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\util\fontxlfd.c">
+      <Filter>lib\fonts\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\util\format.c">
+      <Filter>lib\fonts\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\util\miscutil.c">
+      <Filter>lib\fonts\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\util\patcache.c">
+      <Filter>lib\fonts\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\util\private.c">
+      <Filter>lib\fonts\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\util\utilbitmap.c">
+      <Filter>lib\fonts\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\bitsource.c">
+      <Filter>lib\fonts\fontfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\bufio.c">
+      <Filter>lib\fonts\fontfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\catalogue.c">
+      <Filter>lib\fonts\fontfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\decompress.c">
+      <Filter>lib\fonts\fontfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\defaults.c">
+      <Filter>lib\fonts\fontfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\dirfile.c">
+      <Filter>lib\fonts\fontfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\fileio.c">
+      <Filter>lib\fonts\fontfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\filewr.c">
+      <Filter>lib\fonts\fontfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\fontdir.c">
+      <Filter>lib\fonts\fontfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\fontfile.c">
+      <Filter>lib\fonts\fontfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\fontscale.c">
+      <Filter>lib\fonts\fontfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\register.c">
+      <Filter>lib\fonts\fontfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\renderers.c">
+      <Filter>lib\fonts\fontfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fc\fsconvert.c">
+      <Filter>lib\fonts\fc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fc\fserve.c">
+      <Filter>lib\fonts\fc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fc\fsio.c">
+      <Filter>lib\fonts\fc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fc\fstrans.c">
+      <Filter>lib\fonts\fc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\bitmap\bdfread.c">
+      <Filter>lib\fonts\bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\bitmap\bdfutils.c">
+      <Filter>lib\fonts\bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\bitmap\bitmap.c">
+      <Filter>lib\fonts\bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\bitmap\bitmapfunc.c">
+      <Filter>lib\fonts\bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\bitmap\bitmaputil.c">
+      <Filter>lib\fonts\bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\bitmap\bitscale.c">
+      <Filter>lib\fonts\bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\bitmap\fontink.c">
+      <Filter>lib\fonts\bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\bitmap\pcfread.c">
+      <Filter>lib\fonts\bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\bitmap\pcfwrite.c">
+      <Filter>lib\fonts\bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\bitmap\snfread.c">
+      <Filter>lib\fonts\bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\builtins\dir.c">
+      <Filter>lib\fonts\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\builtins\file.c">
+      <Filter>lib\fonts\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\builtins\fonts.c">
+      <Filter>lib\fonts\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\builtins\fpe.c">
+      <Filter>lib\fonts\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\builtins\render.c">
+      <Filter>lib\fonts\builtins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xfixes\cursor.c">
+      <Filter>xfixes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xfixes\region.c">
+      <Filter>xfixes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xfixes\saveset.c">
+      <Filter>xfixes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xfixes\select.c">
+      <Filter>xfixes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xfixes\xfixes.c">
+      <Filter>xfixes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xext\xtest.c">
+      <Filter>xext</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xext\sleepuntil.c">
+      <Filter>xext</Filter>
+    </ClCompile>
+    <ClCompile Include="..\os\client.c">
+      <Filter>os</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xext\shape.c">
+      <Filter>xext</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xext\geext.c">
+      <Filter>xext</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Xext\bigreq.c">
+      <Filter>xext</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXau-1.0.8\AuDispose.c">
+      <Filter>lib\Xau</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXau-1.0.8\AuFileName.c">
+      <Filter>lib\Xau</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXau-1.0.8\AuGetAddr.c">
+      <Filter>lib\Xau</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXau-1.0.8\AuGetBest.c">
+      <Filter>lib\Xau</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXau-1.0.8\AuLock.c">
+      <Filter>lib\Xau</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXau-1.0.8\AuRead.c">
+      <Filter>lib\Xau</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXau-1.0.8\AuUnlock.c">
+      <Filter>lib\Xau</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXau-1.0.8\AuWrite.c">
+      <Filter>lib\Xau</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\libXfont-1.4.6\src\fontfile\gunzip.c">
+      <Filter>lib\fonts\fontfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\ddxBeep.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\ddxCtrls.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\ddxKillSrv.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\ddxLEDs.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\ddxList.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\ddxLoad.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\ddxPrivate.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\ddxVT.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\maprules.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\xkb.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\xkbAccessX.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\xkbActions.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\XKBAlloc.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\xkbEvents.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\xkbfmisc.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\XKBGAlloc.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\xkbInit.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\xkbLEDs.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\XKBMAlloc.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\XKBMisc.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\xkbout.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\xkbPrKeyEv.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\xkbSwap.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\xkbtext.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\xkbUtils.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xkb\xkmread.c">
+      <Filter>xkb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dix\initatoms.c">
+      <Filter>dix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sys_include\X11\Xtrans\transport.c">
+      <Filter>lib\trans</Filter>
+    </ClCompile>
+    <ClCompile Include="..\os\xstrans.c">
+      <Filter>os</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\dbe\dbestruct.h">
+      <Filter>dbe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dbe\midbe.h">
+      <Filter>dbe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dbe\midbestr.h">
+      <Filter>dbe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dix\dispatch.h">
+      <Filter>dix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dix\enterleave.h">
+      <Filter>dix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\fb\fb.h">
+      <Filter>fb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\fb\fb24_32.h">
+      <Filter>fb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\fb\fbbits.h">
+      <Filter>fb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\fb\fboverlay.h">
+      <Filter>fb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\fb\fbpict.h">
+      <Filter>fb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\fb\fbrop.h">
+      <Filter>fb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\fb\wfbrename.h">
+      <Filter>fb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hw\kdrive\src\fourcc.h">
+      <Filter>hw\kdrive\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hw\kdrive\src\kdrive.h">
+      <Filter>hw\kdrive\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hw\kdrive\src\kxv.h">
+      <Filter>hw\kdrive\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mi\mi.h">
+      <Filter>mi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mi\mibstore.h">
+      <Filter>mi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mi\micmap.h">
+      <Filter>mi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mi\micoord.h">
+      <Filter>mi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mi\mifillarc.h">
+      <Filter>mi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mi\mifpoly.h">
+      <Filter>mi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mi\migc.h">
+      <Filter>mi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mi\miline.h">
+      <Filter>mi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mi\mioverlay.h">
+      <Filter>mi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mi\mipointer.h">
+      <Filter>mi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mi\mipointrst.h">
+      <Filter>mi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mi\mipoly.h">
+      <Filter>mi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mi\miscanfill.h">
+      <Filter>mi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mi\mispans.h">
+      <Filter>mi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mi\misprite.h">
+      <Filter>mi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mi\mistruct.h">
+      <Filter>mi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mi\mivalidate.h">
+      <Filter>mi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mi\miwideline.h">
+      <Filter>mi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mi\mizerarc.h">
+      <Filter>mi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\render\glyphstr.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\render\mipict.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\render\picture.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\render\picturestr.h">
+      <Filter>render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\randr\randrstr.h">
+      <Filter>randr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\randr\rrtransform.h">
+      <Filter>randr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\miext\shadow\shadow.h">
+      <Filter>miext\shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\miext\shadow\shrotpack.h">
+      <Filter>miext\shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\miext\shadow\shrotpackYX.h">
+      <Filter>miext\shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pixman\loongson-mmintrin.h">
+      <Filter>pixman</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pixman\pixman.h">
+      <Filter>pixman</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pixman\pixman-accessor.h">
+      <Filter>pixman</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pixman\pixman-combine32.h">
+      <Filter>pixman</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pixman\pixman-compiler.h">
+      <Filter>pixman</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pixman\pixman-edge-imp.h">
+      <Filter>pixman</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pixman\pixman-inlines.h">
+      <Filter>pixman</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pixman\pixman-private.h">
+      <Filter>pixman</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pixman\pixman-version.h">
+      <Filter>pixman</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\allowev.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\chgdctl.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\chgfctl.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\chgkbd.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\chgkmap.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\chgprop.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\chgptr.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\closedev.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\devbell.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\exglobals.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\getbmap.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\getdctl.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\getfctl.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\getfocus.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\getkmap.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\getmmap.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\getprop.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\getselev.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\getvers.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\grabdev.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\grabdevb.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\grabdevk.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\gtmotion.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\listdev.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\opendev.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\queryst.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\selectev.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\sendexev.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\setbmap.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\setdval.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\setfocus.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\setmmap.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\setmode.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\ungrdev.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\ungrdevb.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\ungrdevk.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\xiallowev.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\xichangecursor.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\xichangehierarchy.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\xigetclientpointer.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\xigrabdev.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\xipassivegrab.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\xiproperty.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\xiquerydevice.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\xiquerypointer.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\xiqueryversion.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\xiselectev.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\xisetclientpointer.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\xisetdevfocus.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Xi\xiwarppointer.h">
+      <Filter>xi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\miext\damage\damage.h">
+      <Filter>miext\Damage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\miext\damage\damagestr.h">
+      <Filter>miext\Damage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\libXfont-1.4.6\src\fc\fserve.h">
+      <Filter>lib\fonts\fc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\libXfont-1.4.6\src\fc\fservestr.h">
+      <Filter>lib\fonts\fc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\libXfont-1.4.6\src\fc\fsio.h">
+      <Filter>lib\fonts\fc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\libXfont-1.4.6\src\fc\fslibos.h">
+      <Filter>lib\fonts\fc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\libXfont-1.4.6\src\bitmap\snfstr.h">
+      <Filter>lib\fonts\bitmap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\libXfont-1.4.6\src\builtins\builtin.h">
+      <Filter>lib\fonts\builtins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\xfixes\xfixes.h">
+      <Filter>xfixes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\xfixes\xfixesint.h">
+      <Filter>xfixes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\xkb\xkb.h">
+      <Filter>xkb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\xkb\xkb-config.h">
+      <Filter>xkb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\xkb\xkbDflts.h">
+      <Filter>xkb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\xkb\xkbgeom.h">
+      <Filter>xkb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sys_include\X11\Xtrans\Xtrans.h">
+      <Filter>lib\trans</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sys_include\X11\Xtrans\Xtransint.h">
+      <Filter>lib\trans</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\dix\buildatoms">
+      <Filter>dix</Filter>
+    </None>
+    <None Include="..\dix\BuiltInAtoms">
+      <Filter>dix</Filter>
+    </None>
+    <None Include="..\dix\Makefile.am">
+      <Filter>dix</Filter>
+    </None>
+    <None Include="..\dix\Xserver.d">
+      <Filter>dix</Filter>
+    </None>
+    <None Include="..\dix\Xserver-dtrace.h.in">
+      <Filter>dix</Filter>
+    </None>
+    <None Include="..\fb\Makefile.am">
+      <Filter>fb</Filter>
+    </None>
+    <None Include="..\hw\kdrive\src\Makefile.am">
+      <Filter>hw\kdrive\src</Filter>
+    </None>
+    <None Include="..\render\Makefile.am">
+      <Filter>render</Filter>
+    </None>
+    <None Include="..\Xi\Makefile.am">
+      <Filter>xi</Filter>
+    </None>
+    <None Include="..\lib\libXfont-1.4.6\src\util\Makefile.am">
+      <Filter>lib\fonts\util</Filter>
+    </None>
+    <None Include="..\lib\libXfont-1.4.6\src\fontfile\Makefile.am">
+      <Filter>lib\fonts\fontfile</Filter>
+    </None>
+    <None Include="..\lib\libXfont-1.4.6\src\bitmap\Makefile.am">
+      <Filter>lib\fonts\bitmap</Filter>
+    </None>
+    <None Include="..\xkb\Makefile.am">
+      <Filter>xkb</Filter>
+    </None>
+    <None Include="..\xkb\README.compiled">
+      <Filter>xkb</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\dix\protocol.txt">
+      <Filter>dix</Filter>
+    </Text>
+    <Text Include="..\xkb\XKM_file_format.txt">
+      <Filter>xkb</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
