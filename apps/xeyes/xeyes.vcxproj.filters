@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Eyes.c" />
+    <ClCompile Include="transform.c" />
+    <ClCompile Include="xeyes.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Eyes.h" />
+    <ClInclude Include="EyesP.h" />
+    <ClInclude Include="transform.h" />
+  </ItemGroup>
+</Project>

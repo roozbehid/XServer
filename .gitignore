@@ -91,3 +91,5 @@ project.lock.json
 *.vcxproj.user
 test-driver
 
+/ConsoleApplication1
+/apps/xeyes/was
